@@ -1,6 +1,6 @@
 # Full Stack Project
 
-- [Full Stack Project](#Full-Stack-Project)
+- [Food-Swipe](#Full-Stack-Project)
   - [Overview](#Overview)
     - [Team Members](#Team-Members)
     - [Team Expectations](#Team-Expectations)
@@ -21,34 +21,27 @@
   - [Code Showcase](#Code-Showcase)
   - [Code Issues & Resolutions](#Code-Issues--Resolutions)
 
-
 <br>
 
 ## Overview
 
-_**Project Title** 
-FOOD-SWIPE
-
-### Permissions
-
-Digital assets used with full licensing and permission from [Death to Stock Photo](), [Freepik](), and [Unsplash](). Custom digital design and branding by John Lansing. Digital assets stored locally and on [Imgur]().
+_**Food-Swipe** Having an app that lets a user signup and login and then wiew pictures of foods. The user will be able to like or disliike foods (pmvp: swiping the photos of food). The user will then be able too view like and the links to the restaurants that have the food liked or disliked._
 
 <br>
 
 ## MVP
 
-> Having an app that lets a user signup and login and then wiew pictures of foods. The user will be able to like or disliike foods. The user will then be able too view like and the links to the restaurants that have the food liked or disliked.
-
-_The **Project Title** FOOD-SWIPE
+_The **Food-Swipe** MVP is to create a functional app on the user side. The user will be able to see the app on a basic level. The user will be able to see foods that belong to restaurants and unlike other food apps it will be based on food items as opposed to the actual restaurant.
 
 <br>
 
 ### MVP Goals
 
 - _Authentication_
-- _Full backend_
-- _Full Crud_
-- _React Natice front end/ React Js_
+- _An API that will provide the data needed for the app_
+- _A Full CRUD backend_
+- _React Native front end/ React Js_
+- _Seed data for about 10+ food items, and about 5 restaurants_
 
 
 <br>
@@ -59,43 +52,27 @@ _The **Project Title** FOOD-SWIPE
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      Rails       | Backend database, api._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      Ruby on Rails       | Backend database, api._ |
+|   React Native   | _Mobile front end._ |
+| React (if React Native is not approved) | _A library to create the front end._ |
+|     reactjs-popup      | _a Library that will allwo me to create pop up components._ |
+
 
 <br>
 
-### MVP Client (Front End)
+### MVP Client (Front End) (unless I am approved for React Native, which is also for the Front end, but mobile based
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views.
+####  MVP
+<img src="https://i.imgur.com/YYNxq80.png" alt="Food-Swipe">
 
-![Dummy Link](url)
 
-- Desktop Landing
+#### Post MVP
+<img src="https://i.imgur.com/dL5h2h2.png" alt="Food-Swipe">
 
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+#### Post Post MVP
+<img src="https://i.imgur.com/32QIauv.png" alt="Food-Swipe>
 
 #### Component Hierarchy
 
