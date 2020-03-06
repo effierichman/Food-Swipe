@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  discription: MyString
+  description: MyString
   image: MyString
   price: MyString
 
 two:
   name: MyString
-  discription: MyString
+  description: MyString
   image: MyString
   price: MyString

@@ -6,7 +6,6 @@ one:
   password_digest: MyString
   address: MyString
   name: MyString
-  rest_name: MyString
   phone: MyString
   image: MyString
 
@@ -16,6 +15,5 @@ two:
   password_digest: MyString
   address: MyString
   name: MyString
-  rest_name: MyString
   phone: MyString
   image: MyString
