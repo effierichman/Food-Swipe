@@ -155,9 +155,10 @@ After I am approved, I will start my backend. My goal is to have full CRUD and U
 | Front-end Authentication |    H     |     10 hrs      |         |
 | Header and Profile Button   |    M     |     4 hrs      |         |
 | Home Page  |    H     |     10 hrs      |          |
+| Likes Page  |    H     |     4 hrs      |          |
 | Edit Page  |    H     |     7 hrs      |         |
 | CSS  |    M     |     10 hrs      |         |
-| TOTAL               |          |     61 hrs      |       |
+| TOTAL               |          |     65 hrs      |       |
 
 
 
@@ -171,9 +172,9 @@ After I am approved, I will start my backend. My goal is to have full CRUD and U
 
 |  Day   | Deliverables                              |
 | ------ | ----------------------------------------- |
-|Mar 4th | project proposal worksheet / psuedocoding |
-|Mar 5th | project pitch / build out endpoints       |
-|Mar 6th | Get approved and start backend with rails           |
+|Mar 4th | Created mock-ups                          |
+|Mar 5th | Put togeth pitch                          |
+|Mar 6th | Get approved and start backend with rails |
 |Mar 7th | OFF                                       |
 |Mar 8th | impliment user auth                       |
 |Mar 9th | styling                                   |
