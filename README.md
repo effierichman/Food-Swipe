@@ -101,7 +101,7 @@ ser authentication will allow the user's likes to be persistent._
 ### MVP Server (Back End)
 
 #### ERD Model
-<img src="https://i.imgur.com/bUTMxTO.png" alt="ERD">
+<img src="https://i.ibb.co/RYmnjcK/Untitled-Diagram.jpg" alt="ERD">
 
 <!-- User has_many foods
 User has_many Reviews
