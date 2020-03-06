@@ -54,7 +54,7 @@ ser authentication will allow the user's likes to be persistent._
 |  Ruby on Rails   | _Backend: database, api, authentication, and authorization_ |
 |   React Native   | _Neccesary for Mobile Development_ |
 |     React        | _Required for native_ |
-|react-native-modals| _a Library to create pop up components in native._ |
+|React-Native-Modals| _a Library to create pop up components in native._ |
 |     Axios        | _Retrieve data from API._ |
 
 
@@ -84,12 +84,12 @@ ser authentication will allow the user's likes to be persistent._
 
 | Component          | State               | Description                                                                        |
 |--------------------|---------------------|------------------------------------------------------------------------------------|
-| App                |   No             | The main component of the app and will create routes.                                                    |
-| SignUp             | Form            | Will add the user to its unique table.                               |
-| Login             | Form          | Will let the user enter the app with its unigue table.                                               |
-| Header           | No                | Will hold logo.                                               |
+| App                |   No             | The root of the application. Contains a StackNavigator to allow for routing between views.|
+| SignUp             | Form            | Allow user create a unique account in the user table.                               |
+| Login             | Form          | Allow user to log in to existing account.|
+| Header           | No                | Shared component containg |
 | Player Symbol          |    No      | Will redirect to profile page |
-| User Home Page   | Yes | User picks will view photos and have option to route to different user options.                                           |
+| User Home Page   | Yes | User picks will view photos and have option to route to different user options.|
 | Food Overlay Page               |     Yes       | Popup of item overlay (pmvp).           |
 | Likes |           Yes      | Displays list of liked foods.  |
 | Edit Profile          |    Yes             | Alows user to edit information                 |
@@ -103,13 +103,13 @@ ser authentication will allow the user's likes to be persistent._
 #### ERD Model
 <img src="https://i.imgur.com/bUTMxTO.png" alt="ERD">
 
-User has_many foods
+<!-- User has_many foods
 User has_many Reviews
 Foods has_many Reviews
 Foods belongs_to User
 Foods belongs_to Restaurant
 Foods belongs_to Restaurant
-Restaurant has_many foods
+Restaurant has_many foods -->
 
 #### Endpoints
 
