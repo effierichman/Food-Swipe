@@ -102,6 +102,13 @@ The **Food-Swipe** MVP is to create a functional app on the user side. The user 
 #### ERD Model
 <img src="https://i.imgur.com/bUTMxTO.png" alt="ERD">
 
+User has_many foods
+User has_many Reviews
+Foods has_many Reviews
+Foods belongs_to User
+Foods belongs_to Restaurant
+Foods belongs_to Restaurant
+Restaurant has_many foods
 
 #### Endpoints
 
@@ -145,11 +152,11 @@ After I am approved, I will start my backend. My goal is to have full CRUD and U
 | CRUD Routes  |    H     |     6 hrs      |          |
 |  User Authentication  |    H     |     7 hrs      |          |
 | Front-end Authentication |    H     |     10 hrs      |         |
-| Header and Profile Button   |    M     |     2 hrs      |         |
+| Header and Profile Button   |    M     |     4 hrs      |         |
 | Home Page  |    H     |     10 hrs      |          |
 | Edit Page  |    H     |     7 hrs      |         |
 | CSS  |    M     |     10 hrs      |         |
-| TOTAL               |          |     59 hrs      |       |
+| TOTAL               |          |     61 hrs      |       |
 
 
 
@@ -165,7 +172,7 @@ After I am approved, I will start my backend. My goal is to have full CRUD and U
 | ------ | ----------------------------------------- |
 |Mar 4th | project proposal worksheet / psuedocoding |
 |Mar 5th | project pitch / build out endpoints       |
-|Mar 6th | Build out front-end components            |
+|Mar 6th | Get approved and start backend with rails           |
 |Mar 7th | OFF                                       |
 |Mar 8th | impliment user auth                       |
 |Mar 9th | styling                                   |
@@ -196,7 +203,25 @@ I already had to change my wireframes, ERD, and Hierarchy
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+This is the code to pull user location, and will automaticallyy ask user to allow app to retrieve user location. (prety cool in my opinion)
+
+  function getLocation() {
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+
+        function success(pos) {
+            let crd = pos.coords;
+
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+
+            compareLocations(pos)
+        }
 
 ## Code Issues & Resolutions
 
