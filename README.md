@@ -72,33 +72,37 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 <img src="https://i.imgur.com/dL5h2h2.png" alt="Food-Swipe">
 
 #### Post Post MVP
-<img src="https://i.imgur.com/32QIauv.png" alt="Food-Swipe>
+<img src="https://i.imgur.com/32QIauv.png" alt="Food-Swipe">
 
 #### Component Hierarchy
 
-> Use this section to show your React components and the data architecture of your app.
-
-![Dummy Link](url)
+<img src="https://i.imgur.com/2JK8cpF.png">
 
 #### Component Breakdown
 
 > Use this section to go into further depth regarding your components, including breaking down the components as stateless or stateful, and considering the passing of data between those components.
 
-|  Component   | State | Description                                                      |
-| :----------: | :---: | :--------------------------------------------------------------- |
-|    Header    |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   y   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card |   n   | _The cards will render the post info via props._                 |
-|    Footer    |   n   | _The footer will show info about me and a link to my portfolio._ |
+| Component          | State               | Description                                                                        |
+|--------------------|---------------------|------------------------------------------------------------------------------------|
+| App                |                 | The main component of the app.                                                    |
+| SignUp             | Form            | Will add the user to its unique table.                               |
+| Login             | Form          | Will let the user enter the app with its unigue table.                                               |
+| Header           | N/A                | Will hold logo.                                               |
+| Player Symbol          |          | Will redirect to profile page |
+| User Home Page   | Selected Categories | User picks categories for the questions.                                           |
+| Food Overlay Page               |            | Popup of item overlay (pmvp).           |
+| Likes |                 | Displays list of liked foods.  |
+| Edit Profile          |                 | Alows user to edit information                 |
+| Resaurant          |                 | Shows restaurants profile  (pmvp)               |
+| Menu          |                 | Shows restaurant's menu (pmvp)                 |
 
 <br>
 
 ### MVP Server (Back End)
 
 #### ERD Model
+<img src="https://i.imgur.com/bUTMxTO.png" alt="ERD">
 
-> Use this section to display an image of a computer generated ERD model.
 
 #### Endpoints
 
@@ -149,9 +153,9 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 |Mar 7th | OFF                                       |
 |Mar 8th | impliment user auth                       |
 |Mar 9th | styling                                   |
-|Mar 10th| MVP, begin post-MVP                       |
-|Mar 11th| post-MVP                                  |
-|Mar 12th| polishing                                 |
+|Mar 10th|  OFF (Jewish Holiday)                    |
+|Mar 11th|  MVP, begin post-MVP                                  |
+|Mar 12th| post-MVP                                |
 |Mar 13th| final presentations                       |
 
 <br>
