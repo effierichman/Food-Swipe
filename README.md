@@ -25,13 +25,13 @@
 
 ## Overview
 
-_**Food-Swipe** Having an app that lets a user signup and login and then wiew pictures of foods. The user will be able to like or disliike foods (pmvp: swiping the photos of food). The user will then be able too view like and the links to the restaurants that have the food liked or disliked._
+_**Food-Swipe** is an app that lets a user signup and login and then wiew pictures of foods. The user will be able to like or disliike foods (pmvp: swiping the photos of food). The user will then be able too view like and the links to the restaurants that have the food liked or disliked._
 
 <br>
 
 ## MVP
 
-_The **Food-Swipe** MVP is to create a functional app on the user side. The user will be able to see the app on a basic level. The user will be able to see foods that belong to restaurants and unlike other food apps it will be based on food items as opposed to the actual restaurant.
+The **Food-Swipe** MVP is to create a functional app on the user side. The user will be able to see the app on a basic level. The user will be able to see foods that belong to restaurants and unlike other food apps it will be based on food items as opposed to the actual restaurant.
 
 <br>
 
@@ -48,14 +48,13 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 
 ### MVP Libraries
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project.
-
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
 |      Ruby on Rails       | Backend database, api._ |
 |   React Native   | _Mobile front end._ |
 | React (if React Native is not approved) | _A library to create the front end._ |
 |     reactjs-popup      | _a Library that will allwo me to create pop up components._ |
+|     Axios     | _Retrieve data from API._ |
 
 
 <br>
@@ -108,14 +107,12 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 
 > Use this section to list a selection of your intended endpoints and their uses. Please list any and all custom-created endpoints.
 
-- GET `/users`
-	- Index route returning an array of all Users and nested 'Likes'
-- GET `/users/:id`
-	- Show route for a user requested by ID
-- POST `/users`
-	- Create route for a new user
-- PUT `/users/:id/nominate`
-  - Update a user by id to create an association to the ballots table
+|Controller|Operation|VERB  |Route        |
+|----------|---------|------|-------------|
+|User      |view    |GET   |/user/:id    |
+|User      |create  |POST  |/user        |
+|User      |update  |PUT   |/user/:id    |
+|User      |delete  |DELETE|/user/:id    |
 
 <br>
 
@@ -129,15 +126,23 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 
 ### Timeframes
 
-> Use this section to estimate the time necessary to build out the various sections of your project. You may include an additional priority matrix, if you desire.
 
 | Task                | Priority | Estimated Time | Actual Time |
 | ------------------- | :------: | :------------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     TBD     |
-| TOTAL               |          |     6 hrs      |     TBD     |
+|  Models        |    H     |     3 hrs      |          |
+| Seed Data           |    H     |     4 hrs      |         |
+| CRUD Routes  |    H     |     6 hrs      |          |
+|  User Authentication  |    H     |     7 hrs      |          |
+| Front-end Authentication |    H     |     10 hrs      |         |
+| Header and Profile Button   |    M     |     2 hrs      |         |
+| Home Page  |    H     |     10 hrs      |          |
+| Edit Page  |    H     |     7 hrs      |         |
+| CSS  |    M     |     10 hrs      |         |
+| TOTAL               |          |     59 hrs      |       |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evalute possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+
+
+
 
 <br>
 
@@ -164,7 +169,11 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Restaurant signup and login
+- Dislikes: List of disliked foods
+- Reviews: Write reviews and view reviews
+- Swipe: The ability to swipe
+- Popup: The pop up when clicked on home page food
 
 <br>
 
@@ -172,7 +181,7 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 
 ## Project Change Log
 
-> This section should be expanded and revised as you work on your project.
+I already had to change my wireframes, ERD, and Hierarchy
 
 ## Code Showcase
 
@@ -180,6 +189,6 @@ _The **Food-Swipe** MVP is to create a functional app on the user side. The user
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+
 
 ***
