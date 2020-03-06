@@ -1,4 +1,4 @@
-# Full Stack Project
+# Food-Swipe
 
 - [Food-Swipe](#Full-Stack-Project)
   - [Overview](#Overview)
@@ -25,22 +25,23 @@
 
 ## Overview
 
-_**Food-Swipe** is an app that lets a user signup and login and then wiew pictures of foods. The user will be able to like or disliike foods (pmvp: swiping the photos of food). The user will then be able too view like and the links to the restaurants that have the food liked or disliked._
+_**Food-Swipe** is a tinder-esque application that aids the user in finding nearby food. The user will like or dislike food items adding them to a list showing liked foods belonging to their respective resteraunts._
 
 <br>
 
 ## MVP
 
-The **Food-Swipe** MVP is to create a functional app on the user side. The user will be able to see the app on a basic level. The user will be able to see foods that belong to restaurants and unlike other food apps it will be based on food items as opposed to the actual restaurant.
+The **Food-Swipe** MVP is to have a deck of food images for the user to like or dislike and have stored in a list based on likes for the user to review. U
+ser authentication will allow the user's likes to be persistent._
 
 <br>
 
 ### MVP Goals
 
 - _Authentication_
-- _An API that will provide the data needed for the app_
-- _A Full CRUD backend_
-- _React Native front end/ React Js_
+- _Full CRUD backend_
+- _Working food deck with ability to like or dislike items._
+- _User ability review liked foods._
 - _Seed data for about 10+ food items, and about 5 restaurants_
 
 
@@ -50,11 +51,11 @@ The **Food-Swipe** MVP is to create a functional app on the user side. The user 
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      Ruby on Rails       | Backend database, api._ |
-|   React Native   | _Mobile front end._ |
-| React (if React Native is not approved) | _A library to create the front end._ |
-|     reactjs-popup      | _a Library that will allwo me to create pop up components._ |
-|     Axios     | _Retrieve data from API._ |
+|  Ruby on Rails   | _Backend: database, api, authentication, and authorization_ |
+|   React Native   | _Neccesary for Mobile Development_ |
+|     React        | _Required for native_ |
+|react-native-modals| _a Library to create pop up components in native._ |
+|     Axios        | _Retrieve data from API._ |
 
 
 <br>
