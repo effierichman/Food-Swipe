@@ -83,17 +83,17 @@ The **Food-Swipe** MVP is to create a functional app on the user side. The user 
 
 | Component          | State               | Description                                                                        |
 |--------------------|---------------------|------------------------------------------------------------------------------------|
-| App                |                 | The main component of the app.                                                    |
+| App                |   No             | The main component of the app and will create routes.                                                    |
 | SignUp             | Form            | Will add the user to its unique table.                               |
 | Login             | Form          | Will let the user enter the app with its unigue table.                                               |
-| Header           | N/A                | Will hold logo.                                               |
-| Player Symbol          |          | Will redirect to profile page |
-| User Home Page   | Selected Categories | User picks categories for the questions.                                           |
-| Food Overlay Page               |            | Popup of item overlay (pmvp).           |
-| Likes |                 | Displays list of liked foods.  |
-| Edit Profile          |                 | Alows user to edit information                 |
-| Resaurant          |                 | Shows restaurants profile  (pmvp)               |
-| Menu          |                 | Shows restaurant's menu (pmvp)                 |
+| Header           | No                | Will hold logo.                                               |
+| Player Symbol          |    No      | Will redirect to profile page |
+| User Home Page   | Yes | User picks will view photos and have option to route to different user options.                                           |
+| Food Overlay Page               |     Yes       | Popup of item overlay (pmvp).           |
+| Likes |           Yes      | Displays list of liked foods.  |
+| Edit Profile          |    Yes             | Alows user to edit information                 |
+| Resaurant          |       Yes          | Shows restaurants profile  (pmvp)               |
+| Menu          |           Yes      | Shows restaurant's menu (pmvp)                 |
 
 <br>
 
@@ -109,10 +109,21 @@ The **Food-Swipe** MVP is to create a functional app on the user side. The user 
 
 |Controller|Operation|VERB  |Route        |
 |----------|---------|------|-------------|
-|User      |view    |GET   |/user/:id    |
-|User      |create  |POST  |/user        |
-|User      |update  |PUT   |/user/:id    |
-|User      |delete  |DELETE|/user/:id    |
+|User      |View  |GET  |/users       |
+|User      |view    |GET   |/users/:user_id    |
+|User      |create  |POST  |/users        |
+|User      |update  |PUT   |/users/:user_id    |
+|User      |delete  |DELETE|/users/:user_id    |
+|Restaurant      |View  |GET  |/Restaurants       |
+|Restaurant      |view    |GET   |/Restaurants/:Restaurants    |
+|Restaurant      |create  |POST  |/Restaurants        |
+|Restaurant      |update  |PUT   |/Restaurants/:Restaurants_id    |
+|Restauant      |delete  |DELETE|/Restaurants/:Restaurants_id    |
+|Food      |View  |GET  |/users      |
+|Food      |view    |GET   |/users/:user_id    |
+|Food      |create  |POST  |/users        |
+|Food      |update  |PUT   |/users/:user_id    |
+|Food      |delete  |DELETE|/users/:user_id    |
 
 <br>
 
@@ -120,7 +131,7 @@ The **Food-Swipe** MVP is to create a functional app on the user side. The user 
 
 ## Planning
 
-> You've got a little over a week to reach your Minimum Viable Product. Use these sections to plan out your approach.
+After I am approved, I will start my backend. My goal is to have full CRUD and User autnetication by monday afternoon. I will then start my front end and will aim to have the logic done my Wednesday night, so I can focus on css and some post mvp features  on thursday.
 
 <br>
 
