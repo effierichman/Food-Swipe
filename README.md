@@ -117,21 +117,21 @@ Restaurant has_many foods -->
 
 |Controller|Operation|VERB  |Route        |
 |----------|---------|------|-------------|
-|User      |View  |GET  |/users       |
+|User      |index  |GET  |/users       |
 |User      |view    |GET   |/users/:user_id    |
 |User      |create  |POST  |/users        |
 |User      |update  |PUT   |/users/:user_id    |
 |User      |delete  |DELETE|/users/:user_id    |
-|Restaurant      |View  |GET  |/Restaurants       |
-|Restaurant      |view    |GET   |/Restaurants/:Restaurants    |
-|Restaurant      |create  |POST  |/Restaurants        |
-|Restaurant      |update  |PUT   |/Restaurants/:Restaurants_id    |
-|Restauant      |delete  |DELETE|/Restaurants/:Restaurants_id    |
-|Food      |View  |GET  |/users      |
-|Food      |view    |GET   |/users/:user_id    |
-|Food      |create  |POST  |/users        |
-|Food      |update  |PUT   |/users/:user_id    |
-|Food      |delete  |DELETE|/users/:user_id    |
+|Restaurant|index   |GET   |/Restaurants       |
+|Restaurant|view    |GET   |/Restaurants/:Restaurants    |
+|Restaurant|create  |POST  |/Restaurants        |
+|Restaurant|update  |PUT   |/Restaurants/:Restaurants_id    |
+|Restauant |delete  |DELETE|/Restaurants/:Restaurants_id    |
+|Food      |index   |GET   |/foods/:user_id    |
+|Food      |view    |GET   |/foods/:food_id    |
+|Food      |create  |POST  |/foods             |
+|Food      |update  |PUT   |/foods/:food_id|
+|Food      |delete  |DELETE|/foods/:food_id    |
 
 <br>
 
