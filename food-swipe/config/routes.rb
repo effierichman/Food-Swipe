@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.s.draw do
   resources :foods
   resources :restaurants
   resources :users
