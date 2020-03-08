@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  before_action :authorize_request, except: %i[index show]
   before_action :set_food, only: [:show, :update, :destroy]
 
   # GET /foods

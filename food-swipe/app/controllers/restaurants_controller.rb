@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  before_action :authorize_request, except: %i[index show]
   before_action :set_restaurant, only: [:show, :update, :destroy]
 
   # GET /restaurants
