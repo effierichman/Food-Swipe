@@ -539,3 +539,22 @@ Processing by UsersController#create as */*
 Completed 201 Created in 232ms (Views: 0.7ms | ActiveRecord: 4.6ms | Allocations: 8493)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1995371968441729185)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRestaurantIdToFoods (20200308213507)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "foods" ADD "restaurant_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200308213507"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1995371968441729185)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (1.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("username", "email", "password_digest", "address", "name", "phone", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Steve"], ["email", "steve@chickfila.com"], ["password_digest", "thechicken"], ["address", "700 Avenue of the Americas, New York, NY 10010"], ["name", "Chick Fil A"], ["phone", "855-667-3232"], ["image", "https://i.imgur.com/qzH8jtd.png"], ["created_at", "2020-03-08 21:46:32.097891"], ["updated_at", "2020-03-08 21:46:32.097891"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Create (1.1ms)[0m  [1m[32mINSERT INTO "foods" ("name", "description", "image", "price", "created_at", "updated_at", "restaurant_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Spicy Chicken"], ["description", "Spicy chicken goodness on a bun"], ["image", "https://i.imgur.com/uXp7wdS.png"], ["price", "$4.99"], ["created_at", "2020-03-08 21:46:32.137058"], ["updated_at", "2020-03-08 21:46:32.137058"], ["restaurant_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
