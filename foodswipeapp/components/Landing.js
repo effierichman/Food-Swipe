@@ -7,11 +7,13 @@ import UserSignUp from './UserSignUp'
 function Landing({ navigation }) {
 
     const navigationUserSignIn = () => navigation.navigate('UserSignIn')
+    const navigationUserSignUp = () => navigation.navigate('UserSignUp')
+
     return (
 
         <View style={styles.container}>
             <Text style={styles.text}>Food-Swipe</Text>
-            <Button text="Sign-Up" color="white" />
+            <Button helper={navigationUserSignUp} text="Sign-Up" color="white" />
             <Button helper={navigationUserSignIn} text="Sign-In" color="white" />
         </View>
     );
