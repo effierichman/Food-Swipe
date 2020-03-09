@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Header } from 'react-native/Libraries/NewAppScreen';
 
-function UserSignIn({ navigation }) {
-    const [userName, setUserName] = useState('')
-    const [password, setPassword] = useState('')
-    const navigateToUserHome = () => {
-        navigation.navigate("UserHome")
-    }
+function UserHome({ navigation }) {
+    // const [userName, setUserName] = useState('')
+    // const [password, setPassword] = useState('')
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Sign-In</Text>
-            <TextInput
+            <View style={styles.header}>
+                <Text style={styles.text}>Food-Swipe</Text>
+                <MaterialCommunityIcons name="account" size={32} color="green" />
+            </View>
+            <Text style={styles.text}>User Home Page</Text>
+            {/* <TextInput
               style={styles.input}
               onChangeText={text => setUserName(text)}
               value={userName}
@@ -24,7 +27,7 @@ function UserSignIn({ navigation }) {
               secureTextEntry={true}
               placeholder='Password'
             />
-            <Button text='sign-in' color='white' helper={navigateToUserHome}/>
+            <Button text='sign-in' color='white'/> */}
         </View>
     );
 }
@@ -39,11 +42,22 @@ const styles = StyleSheet.create({
         backgroundColor: "blue"
     },
 
+    header: {
+        flex: .3,
+        width: 400,
+        flexDirection: 'row',
+        alignItems: "center",
+        paddingLeft: 50,
+        justifyContent: "flex-start",
+        backgroundColor: "blue",
+        bottom: 200
+    },
+
     text: {
         color: "red",
+        width: 300,
         fontSize: 30,
         fontWeight: "bold",
-        bottom: 200,
         fontSize: 50
     },
     input: {
@@ -56,4 +70,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default UserSignIn
+export default UserHome
