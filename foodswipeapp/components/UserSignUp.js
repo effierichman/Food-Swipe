@@ -6,6 +6,9 @@ function UserSignUp({ navigation }) {
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
+    const navigateToSignIn = () => {
+        navigation.navigate('UserSignIn')
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Sign-Up</Text>
@@ -28,7 +31,7 @@ function UserSignUp({ navigation }) {
               secureTextEntry={true}
               placeholder='Password'
             />
-            <Button text='sign-Up' color='white'/>
+            <Button text='sign-Up' color='white' helper={navigateToSignIn}/>
         </View>
     );
 }
