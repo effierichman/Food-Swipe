@@ -33,41 +33,41 @@ function UserDislikes({ navigation }) {
 }
 
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        resizeMode: "cover",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "blue"
-    },
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         resizeMode: "cover",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         backgroundColor: "blue"
+//     },
 
-    header: {
-        flex: .3,
-        width: 400,
-        flexDirection: 'row',
-        alignItems: "center",
-        paddingLeft: 50,
-        justifyContent: "flex-start",
-        backgroundColor: "blue",
-        bottom: 200
-    },
+//     header: {
+//         flex: .3,
+//         width: 400,
+//         flexDirection: 'row',
+//         alignItems: "center",
+//         paddingLeft: 50,
+//         justifyContent: "flex-start",
+//         backgroundColor: "blue",
+//         bottom: 200
+//     },
 
-    text: {
-        color: "red",
-        width: 300,
-        fontSize: 30,
-        fontWeight: "bold",
-        fontSize: 50
-    },
-    input: {
-        height: 40,
-        width: 250,
-        color: 'gray',
-        backgroundColor: 'white',
-        textAlign: 'center',
-        margin: 10
-    }
-})
+//     text: {
+//         color: "red",
+//         width: 300,
+//         fontSize: 30,
+//         fontWeight: "bold",
+//         fontSize: 50
+//     },
+//     input: {
+//         height: 40,
+//         width: 250,
+//         color: 'gray',
+//         backgroundColor: 'white',
+//         textAlign: 'center',
+//         margin: 10
+//     }
+// })
 
 export default UserDislikes

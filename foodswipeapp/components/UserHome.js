@@ -7,11 +7,17 @@ import { Header } from 'react-native/Libraries/NewAppScreen';
 function UserHome({ navigation }) {
     // const [userName, setUserName] = useState('')
     // const [password, setPassword] = useState('')
+    const navigateToUserMenu = () => {
+        navigation.navigate("UserMenu")
+    }
+  
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
-                <MaterialCommunityIcons name="account" size={32} color="green" />
+                
+                <MaterialCommunityIcons name="account" size={32} color="green" onPress = {() => navigateToUserMenu()}  />
+               
             </View>
             <Text style={styles.text}>User Home Page</Text>
             {/* <TextInput

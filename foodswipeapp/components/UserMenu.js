@@ -4,30 +4,32 @@ import Button from './Button'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
-function ImgShare({ navigation }) {
+function UserMenu({ navigation }) {
     // const [userName, setUserName] = useState('')
     // const [password, setPassword] = useState('')
+    const navigateToUserLikes = () => {
+        navigation.navigate('UserLikes')
+    }
+    const navigateToUserDislike = () => {
+        navigation.navigate('UserDislikes')
+    }
+    const navigateToUserRevies = () => {
+        navigation.navigate('UserReviews')
+    }
+    const navigateToUserEdit = () => {
+        navigation.navigate('UserEdit')
+    }
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
-            <Text style={styles.text}>Image Share Page</Text>
-            {/* <TextInput
-              style={styles.input}
-              onChangeText={text => setUserName(text)}
-              value={userName}
-              placeholder='User Name'
-            />
-            <TextInput
-              style={styles.input}
-              onChangeText={text => setPassword(text)}
-              value={password}
-              secureTextEntry={true}
-              placeholder='Password'
-            />
-            <Button text='sign-in' color='white'/> */}
+            
+            <Button text='Likes' color='white' helper={navigateToUserLikes}/>
+            <Button text='Dislikes' color='white' helper={navigateToUserDislike}/>
+            <Button text='Reviews' color='white' helper={navigateToUserRevies}/>
+            <Button text='Edit Profile' color='white' helper={navigateToUserEdit}/>
         </View>
     );
 }
@@ -50,7 +52,6 @@ const styles = StyleSheet.create({
         paddingLeft: 50,
         justifyContent: "flex-start",
         backgroundColor: "blue",
-        bottom: 200
     },
 
     text: {
@@ -70,4 +71,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ImgShare
+export default UserMenu
