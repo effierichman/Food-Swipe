@@ -13,7 +13,7 @@ function UserMenu({ navigation }) {
     const navigateToUserDislike = () => {
         navigation.navigate('UserDislikes')
     }
-    const navigateToUserRevies = () => {
+    const navigateToUserReviews = () => {
         navigation.navigate('UserReviews')
     }
     const navigateToUserEdit = () => {
@@ -28,7 +28,7 @@ function UserMenu({ navigation }) {
             
             <Button text='Likes' color='white' helper={navigateToUserLikes}/>
             <Button text='Dislikes' color='white' helper={navigateToUserDislike}/>
-            <Button text='Reviews' color='white' helper={navigateToUserRevies}/>
+            <Button text='Reviews' color='white' helper={navigateToUserReviews}/>
             <Button text='Edit Profile' color='white' helper={navigateToUserEdit}/>
         </View>
     );

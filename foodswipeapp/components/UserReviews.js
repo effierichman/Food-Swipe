@@ -4,7 +4,7 @@ import Button from './Button'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
-function UserDislikes({ navigation }) {
+function UserReviews({ navigation }) {
     // const [userName, setUserName] = useState('')
     // const [password, setPassword] = useState('')
     return (
@@ -13,7 +13,7 @@ function UserDislikes({ navigation }) {
                 <Text style={styles.text}>Food-Swipe</Text>
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
-            <Text style={styles.text}>User Dislikes Page</Text>
+            <Text style={styles.text}>User Reviews Page</Text>
             {/* <TextInput
               style={styles.input}
               onChangeText={text => setUserName(text)}
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default UserDislikes
+export default UserReviews

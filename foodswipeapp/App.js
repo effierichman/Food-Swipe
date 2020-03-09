@@ -10,6 +10,7 @@ import UserLikes from './components/UserLikes'
 import UserDislikes from './components/UserDislikes'
 import UserEdit from './components/UserEdit'
 import UserMenu from './components/UserMenu'
+import UserReviews from './components/UserReviews'
 
 const Stack = createStackNavigator()
  function App() {
@@ -42,6 +43,9 @@ const Stack = createStackNavigator()
             <Stack.Screen
             name="UserDislikes"
             component={UserDislikes} />
+            <Stack.Screen
+            name="UserReviews"
+            component={UserReviews} />
       </Stack.Navigator>
     </NavigationContainer>
   );
