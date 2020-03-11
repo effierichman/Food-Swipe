@@ -15,5 +15,5 @@ Restaurant.create(
         phone: '855-667-3232',
         image: 'https://i.imgur.com/qzH8jtd.png'
     )
-Food.create(name: 'Spicy Chicken', description: 'Spicy chicken goodness on a bun', image: 'https://i.imgur.com/uXp7wdS.png', price: '$4.99', restaurant_id: 1)
+Food.create[(name: 'Spicy Chicken', description: 'Spicy chicken goodness on a bun', image: 'https://i.imgur.com/uXp7wdS.png', price: '$4.99', restaurant_id: 1), (name: 'Sesame Chicken', description: 'Sesame chicken goodness on a bun', image: 'https://i.imgur.com/uXp7wdS.png', price: '$5.99', restaurant_id: 1),(name: 'Swwet Chicken', description: 'Sweet chicken goodness on a bun', image: 'https://i.imgur.com/uXp7wdS.png', price: '$8.99', restaurant_id: 1)]
 # Food_user.create(user_id: '', food_id: '', liked: '')

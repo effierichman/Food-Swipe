@@ -18,7 +18,7 @@ export default function Button({ text, color, helper }) {
 const styles = StyleSheet.create({
     button: {
         height: 60,
-        width: 300,
+        width: 250,
         alignItems: "center",
         justifyContent: "center",
         margin: 25,

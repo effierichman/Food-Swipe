@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "blue"
+        backgroundColor: "rgb(247, 225, 156)"
     },
 
     header: {
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingLeft: 50,
         justifyContent: "flex-start",
-        backgroundColor: "blue",
+        backgroundColor: "rgb(247, 225, 156)",
     },
 
     text: {

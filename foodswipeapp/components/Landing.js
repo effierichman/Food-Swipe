@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "teal"
+        backgroundColor: "rgb(247, 225, 156)"
 
     },
 

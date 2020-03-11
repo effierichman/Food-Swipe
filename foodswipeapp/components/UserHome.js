@@ -39,8 +39,10 @@ function UserHome({ navigation }) {
                 </Image> */}
             </View>
             {/* will need to add logic to onclick push state to like or dislike page */}
+            <View style={styles.symbol}>
             <Feather onPress={like} name="thumbs-up" size={32} color="green"   />
             <Feather onPress={dislike} name="thumbs-down" size={32} color="green"  />
+            </View>
         </View>
     );
 }
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "blue"
+        backgroundColor: "rgb(247, 225, 156)"
     },
 
     header: {
@@ -62,24 +64,28 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingLeft: 50,
         justifyContent: "flex-start",
-        backgroundColor: "blue",
+        backgroundColor: "rgb(247, 225, 156)",
         bottom: 200
     },
 
     text: {
-        color: "red",
+        color: "blue",
         width: 300,
         fontSize: 30,
         fontWeight: "bold",
         fontSize: 50
     },
-    input: {
-        height: 40,
-        width: 250,
-        color: 'gray',
-        backgroundColor: 'white',
-        textAlign: 'center',
-        margin: 10
+
+    symbol: {
+        flex: .3,
+        width: 400,
+        flexDirection: 'row',
+        alignItems: "center",
+        paddingLeft: 100,
+        paddingRight: 100,
+        justifyContent: "space-between",
+        backgroundColor: "rgb(247, 225, 156)",
+        bottom: 200
     }
 })
 
