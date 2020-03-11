@@ -15,9 +15,9 @@ function UserLikes({ navigation }) {
             </View>
             <Text style={styles.text}>User Likes Page</Text>
            
-        </View>
         <View style={styles.symbol}>
         <AntDesign onPress={like} name="delete" size={32} color="green"   />
+        </View>
         </View>
     
     );
