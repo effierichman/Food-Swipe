@@ -149,15 +149,15 @@ After I am approved, I will start my backend. My goal is to have full CRUD and U
 | Task                | Priority | Estimated Time | Actual Time |
 | ------------------- | :------: | :------------: | :---------: |
 |  Models        |    H     |     3 hrs      |    2 hrs      |
-| Seed Data           |    H     |     4 hrs      |    30 min     |
+| Seed Data           |    H     |     4 hrs      |   1 hr     |
 | CRUD Routes  |    H     |     6 hrs      |     3 hrs     |
 |  User Authentication  |    H     |     7 hrs      |    1 hr      |
 | Front-end Authentication |    H     |     10 hrs      |         |
 | Header and Profile Button   |    M     |     4 hrs      |         |
-| Home Page  |    H     |     10 hrs      |     1 hr     |
-| Likes Page  |    H     |     4 hrs      |          |
+| Home Page  |    H     |     10 hrs      |     3 hrs    |
+| Likes Page  |    H     |     4 hrs      |    1 hr      |
 | Edit Page  |    H     |     7 hrs      |         |
-| CSS  |    M     |     10 hrs      |     20 min    |
+| CSS  |    M     |     10 hrs      |     2.75 hrs    |
 | TOTAL               |          |     65 hrs      |    7 hrs 50 min   |
 
 
