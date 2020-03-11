@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Tile } from 'react-native'
 import Button from './Button'
 import { MaterialCommunityIcons, Feather} from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
@@ -10,6 +10,16 @@ function UserHome({ navigation }) {
     const navigateToUserMenu = () => {
         navigation.navigate("UserMenu")
     }
+
+    // const Card = ({ pic, title, caption }) => (
+    //     <Tile
+    //     //   imageSrc={pic}
+    //       activeOpacity={0.9}
+    //       featured
+    //     />
+    //   )
+    // }
+
  //api call
  //functionn  rendor to run in view to check to see if there are food items waiting
  //it will set foods as a pop to be rendered

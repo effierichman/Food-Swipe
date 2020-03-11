@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
 function UserLikes({ navigation }) {
@@ -29,6 +29,10 @@ function UserLikes({ navigation }) {
             />
             <Button text='sign-in' color='white'/> */}
         </View>
+        <View style={styles.symbol}>
+        <AntDesign onPress={like} name="delete" size={32} color="green"   />
+        </View>
+    
     );
 }
 
