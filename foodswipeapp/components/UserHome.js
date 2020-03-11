@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+// import Swiper from 'react-native-deck-swiper'
 
 function UserHome({ navigation }) {
     const [likeFood, setLikeFood] = useState('')
@@ -45,9 +46,7 @@ function UserHome({ navigation }) {
             </View>
             <Text style={styles.text}>User Home Page</Text>
             <View>
-                {/* <Image>
-
-                </Image> */}
+               
             </View>
             {/* will need to add logic to onclick push state to like or dislike page */}
             <View style={styles.symbol}>

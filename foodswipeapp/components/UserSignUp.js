@@ -13,18 +13,37 @@ function UserSignUp({ navigation }) {
         navigation.navigate('UserSignIn')
     }
 
-    const handleChange = (e) => {
-        let { name, value } = e.target
+    const handleUsernameChange = (e) => {
+        console.log(e)
         setUserForm(prevState => ({
             ...prevState,
-            [name]: value
+            username: e
         })
         )
     }
 
-    const  handleSubmit = (e) => {
-        e.preventDefault()
-        let res = axios.post('https://localhost:3000/users', userForm)
+    const handlePasswordChange = (e) => {
+        console.log(e)
+        setUserForm(prevState => ({
+            ...prevState,
+            password: e
+        })
+        )
+    }
+
+    const handleEmailChange = (e) => {
+        console.log(e)
+        setUserForm(prevState => ({
+            ...prevState,
+            email: e
+        })
+        )
+    }
+
+    const handleSubmit = () => {
+        let data = { user: userForm }
+        // e.preventDefault()
+        let res = axios.post('http://localhost:3000/users', data)
         console.log(res)
     }
 
@@ -34,27 +53,27 @@ function UserSignUp({ navigation }) {
             <Text style={styles.text}>Sign-Up</Text>
             <TextInput
                 style={styles.input}
-                onChangeText={handleChange}
+                onChangeText={handleUsernameChange}
                 value={username}
                 placeholder='User Name'
                 name="username"
             />
             <TextInput
                 style={styles.input}
-                onChangeText={handleChange}
+                onChangeText={handleEmailChange}
                 value={email}
                 placeholder='Email'
                 name='email'
             />
             <TextInput
                 style={styles.input}
-                onChangeText={handleChange}
+                onChangeText={handlePasswordChange}
                 value={password}
                 secureTextEntry={true}
                 placeholder='Password'
                 name='password'
             />
-            <Button onPress={handleSubmit} text='sign-Up' color='white' helper={navigateToSignIn} />
+            <Button helper={handleSubmit} text='Sign-Up' color='white' />
         </View>
     );
 }
