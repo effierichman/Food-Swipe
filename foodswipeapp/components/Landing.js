@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "green"
+        backgroundColor: "teal"
 
     },
 
     text: {
-        color: "blue",
+        color: "white",
         fontSize: 50,
         fontWeight: "bold",
         bottom: 200,

@@ -1,16 +1,29 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Feather} from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
 function UserHome({ navigation }) {
-    // const [userName, setUserName] = useState('')
-    // const [password, setPassword] = useState('')
+    const [likeFood, setLikeFood] = useState('')
+    const [dilikeFood, setDislikeFood] = useState('')
     const navigateToUserMenu = () => {
         navigation.navigate("UserMenu")
     }
-  
+ //api call
+ //functionn  rendor to run in view to check to see if there are food items waiting
+ //it will set foods as a pop to be rendered
+ //use image componnet to render
+    const like = () => {
+        // axios.post to join table
+        //navigate to food page
+    }
+    const dislike = () => {
+        console.log('Hello from dislike')
+        // axios.post to join table
+        //navigate back to UserHome with new stack.
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -20,20 +33,14 @@ function UserHome({ navigation }) {
                
             </View>
             <Text style={styles.text}>User Home Page</Text>
-            {/* <TextInput
-              style={styles.input}
-              onChangeText={text => setUserName(text)}
-              value={userName}
-              placeholder='User Name'
-            />
-            <TextInput
-              style={styles.input}
-              onChangeText={text => setPassword(text)}
-              value={password}
-              secureTextEntry={true}
-              placeholder='Password'
-            />
-            <Button text='sign-in' color='white'/> */}
+            <View>
+                {/* <Image>
+
+                </Image> */}
+            </View>
+            {/* will need to add logic to onclick push state to like or dislike page */}
+            <Feather onPress={like} name="thumbs-up" size={32} color="green"   />
+            <Feather onPress={dislike} name="thumbs-down" size={32} color="green"  />
         </View>
     );
 }

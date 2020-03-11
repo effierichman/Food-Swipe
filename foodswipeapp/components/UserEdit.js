@@ -5,20 +5,29 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
 function UserEdit({ navigation }) {
-    // const [userName, setUserName] = useState('')
-    // const [password, setPassword] = useState('')
+    const [userName, setUserName] = useState('')
+    const [userEmail, setUserEmail] = useState('')
+    const [password, setPassword] = useState('')
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
+            <View>
             <Text style={styles.text}>User Edit Page</Text>
-            {/* <TextInput
+            <TextInput
               style={styles.input}
               onChangeText={text => setUserName(text)}
               value={userName}
               placeholder='User Name'
+            />
+            <TextInput
+              style={styles.input}
+              onChangeText={text => setUserEmaill(text)}
+              value={userEmail}
+              secureTextEntry={true}
+              placeholder='Email'
             />
             <TextInput
               style={styles.input}
@@ -27,7 +36,8 @@ function UserEdit({ navigation }) {
               secureTextEntry={true}
               placeholder='Password'
             />
-            <Button text='sign-in' color='white'/> */}
+            <Button text='Save' color='white'/>
+            </View>
         </View>
     );
 }
