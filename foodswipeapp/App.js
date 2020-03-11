@@ -6,6 +6,11 @@ import Landing from "./components/Landing"
 import UserSignUp from './components/UserSignUp'
 import UserSignIn from './components/UserSignIn'
 import UserHome from './components/UserHome'
+import UserLikes from './components/UserLikes'
+import UserDislikes from './components/UserDislikes'
+import UserEdit from './components/UserEdit'
+import UserMenu from './components/UserMenu'
+import UserReviews from './components/UserReviews'
 
 const Stack = createStackNavigator()
  function App() {
@@ -14,7 +19,7 @@ const Stack = createStackNavigator()
       <Stack.Navigator
       screenOptions= {{headerShown: false}}
       initialRouteName="Landing">
-        <Stack.Screen
+            <Stack.Screen
             name="Landing"
             component={Landing} />
             <Stack.Screen
@@ -26,6 +31,21 @@ const Stack = createStackNavigator()
             <Stack.Screen
             name="UserHome"
             component={UserHome} />
+            <Stack.Screen
+            name="UserMenu"
+            component={UserMenu} />
+            <Stack.Screen
+            name="UserEdit"
+            component={UserEdit} />
+            <Stack.Screen
+            name="UserLikes"
+            component={UserLikes} />
+            <Stack.Screen
+            name="UserDislikes"
+            component={UserDislikes} />
+            <Stack.Screen
+            name="UserReviews"
+            component={UserReviews} />
       </Stack.Navigator>
     </NavigationContainer>
   );

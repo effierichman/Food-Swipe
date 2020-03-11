@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Header } from 'react-native/Libraries/NewAppScreen';
 
-function UserSignIn({ navigation }) {
+function UserEdit({ navigation }) {
     const [userName, setUserName] = useState('')
+    const [userEmail, setUserEmail] = useState('')
     const [password, setPassword] = useState('')
-    const navigateToUserHome = () => {
-        navigation.navigate("UserHome")
-    }
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Sign-In</Text>
+            <View style={styles.header}>
+                <Text style={styles.text}>Food-Swipe</Text>
+                <MaterialCommunityIcons name="account" size={32} color="green" />
+            </View>
+            <View>
+            <Text style={styles.text}>User Edit Page</Text>
             <TextInput
               style={styles.input}
               onChangeText={text => setUserName(text)}
@@ -19,12 +24,20 @@ function UserSignIn({ navigation }) {
             />
             <TextInput
               style={styles.input}
+              onChangeText={text => setUserEmaill(text)}
+              value={userEmail}
+              secureTextEntry={true}
+              placeholder='Email'
+            />
+            <TextInput
+              style={styles.input}
               onChangeText={text => setPassword(text)}
               value={password}
               secureTextEntry={true}
               placeholder='Password'
             />
-            <Button text='sign-in' color='white' helper={navigateToUserHome}/>
+            <Button text='Save' color='white'/>
+            </View>
         </View>
     );
 }
@@ -36,14 +49,25 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "rgb(247, 225, 156)"
+        backgroundColor: "blue"
+    },
+
+    header: {
+        flex: .3,
+        width: 400,
+        flexDirection: 'row',
+        alignItems: "center",
+        paddingLeft: 50,
+        justifyContent: "flex-start",
+        backgroundColor: "blue",
+        bottom: 200
     },
 
     text: {
         color: "red",
+        width: 300,
         fontSize: 30,
         fontWeight: "bold",
-        bottom: 200,
         fontSize: 50
     },
     input: {
@@ -56,4 +80,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default UserSignIn
+export default UserEdit

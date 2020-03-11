@@ -1,33 +1,59 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { Tile } from 'react-native-elements';
 import Button from './Button'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Feather} from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
 function UserHome({ navigation }) {
-    // const [userName, setUserName] = useState('')
-    // const [password, setPassword] = useState('')
+    const [likeFood, setLikeFood] = useState('')
+    const [dilikeFood, setDislikeFood] = useState('')
+    const navigateToUserMenu = () => {
+        navigation.navigate("UserMenu")
+    }
+
+    // const Card = ({ pic, title, caption }) => (
+    //     <Tile
+    //     //   imageSrc={pic}
+    //       activeOpacity={0.9}
+    //       featured
+    //     />
+    //   )
+    // }
+
+ //api call
+ //functionn  rendor to run in view to check to see if there are food items waiting
+ //it will set foods as a pop to be rendered
+ //use image componnet to render
+    const like = () => {
+        // axios.post to join table
+        //navigate to food page
+    }
+    const dislike = () => {
+        console.log('Hello from dislike')
+        // axios.post to join table
+        //navigate back to UserHome with new stack.
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
-                <MaterialCommunityIcons name="account" size={32} color="green" />
+                
+                <MaterialCommunityIcons name="account" size={32} color="green" onPress = {() => navigateToUserMenu()}  />
+               
             </View>
             <Text style={styles.text}>User Home Page</Text>
-            {/* <TextInput
-              style={styles.input}
-              onChangeText={text => setUserName(text)}
-              value={userName}
-              placeholder='User Name'
-            />
-            <TextInput
-              style={styles.input}
-              onChangeText={text => setPassword(text)}
-              value={password}
-              secureTextEntry={true}
-              placeholder='Password'
-            />
-            <Button text='sign-in' color='white'/> */}
+            <View>
+                {/* <Image>
+
+                </Image> */}
+            </View>
+            {/* will need to add logic to onclick push state to like or dislike page */}
+            <View style={styles.symbol}>
+            <Feather onPress={like} name="thumbs-up" size={32} color="green"   />
+            <Feather onPress={dislike} name="thumbs-down" size={32} color="green"  />
+            </View>
         </View>
     );
 }
@@ -39,7 +65,7 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "blue"
+        backgroundColor: "rgb(247, 225, 156)"
     },
 
     header: {
@@ -49,24 +75,28 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingLeft: 50,
         justifyContent: "flex-start",
-        backgroundColor: "blue",
+        backgroundColor: "rgb(247, 225, 156)",
         bottom: 200
     },
 
     text: {
-        color: "red",
+        color: "blue",
         width: 300,
         fontSize: 30,
         fontWeight: "bold",
         fontSize: 50
     },
-    input: {
-        height: 40,
-        width: 250,
-        color: 'gray',
-        backgroundColor: 'white',
-        textAlign: 'center',
-        margin: 10
+
+    symbol: {
+        flex: .3,
+        width: 400,
+        flexDirection: 'row',
+        alignItems: "center",
+        paddingLeft: 100,
+        paddingRight: 100,
+        justifyContent: "space-between",
+        backgroundColor: "rgb(247, 225, 156)",
+        bottom: 200
     }
 })
 
