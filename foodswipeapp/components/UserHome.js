@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput, Tile } from 'react-native'
+import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { Tile } from 'react-native-elements';
 import Button from './Button'
 import { MaterialCommunityIcons, Feather} from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';

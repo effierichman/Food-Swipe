@@ -14,20 +14,6 @@ function UserDislikes({ navigation }) {
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
             <Text style={styles.text}>User Dislikes Page</Text>
-            {/* <TextInput
-              style={styles.input}
-              onChangeText={text => setUserName(text)}
-              value={userName}
-              placeholder='User Name'
-            />
-            <TextInput
-              style={styles.input}
-              onChangeText={text => setPassword(text)}
-              value={password}
-              secureTextEntry={true}
-              placeholder='Password'
-            />
-            <Button text='sign-in' color='white'/> */}
         </View>
         <View style={styles.symbol}>
         <AntDesign onPress={like} name="delete" size={32} color="green"   />
