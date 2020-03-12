@@ -33,7 +33,7 @@ function UserSignIn({ navigation }) {
     useEffect(() => {
         currentUser ?
         navigation.navigate('UserHome') :
-        console.log('fail')
+        console.log('failed to sign in')
     }, [currentUser])
 
     const handleSubmit = async () => {
