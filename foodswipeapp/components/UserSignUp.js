@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
 import axios from 'axios'
-import registerUser from '../services/apiHelper'
+import {registerUser} from '../services/apiHelper'
 
 function UserSignUp({ navigation }) {
     const [userForm, setUserForm] = useState({
@@ -10,9 +10,9 @@ function UserSignUp({ navigation }) {
         password: '',
         email: ''
     })
-    const navigateToSignIn = () => {
-        navigation.navigate('UserSignIn')
-    }
+    // const navigateToSignIn = () => {
+    //     navigation.navigate('UserSignIn')
+    // }
 
     const handleUsernameChange = (e) => {
         console.log(e)
@@ -42,9 +42,9 @@ function UserSignUp({ navigation }) {
     }
 
     const handleSubmit = () => {
-        let data = { user: userForm }
+        let res = registerUser(userForm)
         // e.preventDefault()
-        let res = axios.post('http://localhost:3000/users', data)
+       
         console.log(res)
         navigation.navigate('UserSignIn')
     }

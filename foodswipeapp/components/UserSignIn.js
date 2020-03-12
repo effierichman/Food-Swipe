@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
 import axios from 'axios'
 import { AsyncStorage } from 'react-native';
-import {loginUser} from '../services/apiHelper'
+import {loginUser, verifyUser} from '../services/apiHelper'
   
 function UserSignIn({ navigation }) {
     const [userForm, setUserForm] = useState({
@@ -30,23 +30,24 @@ function UserSignIn({ navigation }) {
         )
     }
 
+    let { username, password } = userForm
+    
+    const handleSubmit = async () => {
+        let res = await loginUser({user: userForm})
+        const verify = await verifyUser()
+        setCurrentUser(verify)
+        console.log(res)
+    }
+    
     useEffect(() => {
         currentUser ?
         navigation.navigate('UserHome') :
         console.log('failed to sign in')
     }, [currentUser])
-
-    const handleSubmit = async () => {
-        let res = loginUser({user: userForm})
-        
-        setCurrentUser(res)
-        console.log(res)
-    }
-
+    
     // const navigateToUserHome = () => {
     //     navigation.navigate("UserHome")
     // }
-    let { username, password } = userForm
 
     return (
         <View style={styles.container}>
