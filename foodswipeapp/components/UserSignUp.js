@@ -45,6 +45,7 @@ function UserSignUp({ navigation }) {
         // e.preventDefault()
         let res = axios.post('http://localhost:3000/users', data)
         console.log(res)
+        navigation.navigate('UserSignIn')
     }
 
     let { username, password, email } = userForm
@@ -73,7 +74,7 @@ function UserSignUp({ navigation }) {
                 placeholder='Password'
                 name='password'
             />
-            <Button helper={handleSubmit} text='Sign-Up' color='white' />
+            <Button helper={handleSubmit} text='Sign-Up' color='white'  />
         </View>
     );
 }

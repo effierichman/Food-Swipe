@@ -1,30 +1,63 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
+import axios from 'axios'
 
 function UserSignIn({ navigation }) {
-    const [userName, setUserName] = useState('')
-    const [password, setPassword] = useState('')
+    const [userForm, setUserForm] = useState({
+        username: '',
+        password: ''
+    })
+
+    const handleUsernameChange = (e) => {
+        console.log(e)
+        setUserForm(prevState => ({
+            ...prevState,
+            username: e
+        })
+        )
+    }
+
+    const handlePasswordChange = (e) => {
+        console.log(e)
+        setUserForm(prevState => ({
+            ...prevState,
+            password: e
+        })
+        )
+    }
+
+    const handleSubmit = () => {
+        let data = { user: userForm }
+        // e.preventDefault()
+        let res = axios.post('http://localhost:3000/auth/login', data)
+        console.log(res)
+        // navigation.navigate('UserHome')
+    }
+
     const navigateToUserHome = () => {
         navigation.navigate("UserHome")
     }
+
+    let { username, password } = userForm
+
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Sign-In</Text>
             <TextInput
               style={styles.input}
-              onChangeText={text => setUserName(text)}
-              value={userName}
+              onChangeText={handleUsernameChange}
+              value={username}
               placeholder='User Name'
             />
             <TextInput
               style={styles.input}
-              onChangeText={text => setPassword(text)}
+              onChangeText={handlePasswordChange}
               value={password}
               secureTextEntry={true}
               placeholder='Password'
             />
-            <Button text='sign-in' color='white' helper={navigateToUserHome}/>
+            <Button text='sign-in' color='white' helper={handleSubmit}/>
         </View>
     );
 }
