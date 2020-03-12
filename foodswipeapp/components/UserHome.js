@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
-import { Tile } from 'react-native-elements';
+// import { Tile } from 'react-native-elements';
 import Button from './Button'
-import { MaterialCommunityIcons, Feather} from '@expo/vector-icons';
+import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+// import Swiper from 'react-native-deck-swiper'
+// import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
+// import { Navigation } from 'react-native-navigation';
 
 function UserHome({ navigation }) {
     const [likeFood, setLikeFood] = useState('')
@@ -21,10 +24,10 @@ function UserHome({ navigation }) {
     //   )
     // }
 
- //api call
- //functionn  rendor to run in view to check to see if there are food items waiting
- //it will set foods as a pop to be rendered
- //use image componnet to render
+    //api call
+    //functionn  rendor to run in view to check to see if there are food items waiting
+    //it will set foods as a pop to be rendered
+    //use image componnet to render
     const like = () => {
         // axios.post to join table
         //navigate to food page
@@ -39,20 +42,18 @@ function UserHome({ navigation }) {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
-                
-                <MaterialCommunityIcons name="account" size={32} color="green" onPress = {() => navigateToUserMenu()}  />
-               
+
+                <MaterialCommunityIcons name="account" size={32} color="green" onPress={() => navigateToUserMenu()} />
+
             </View>
             <Text style={styles.text}>User Home Page</Text>
             <View>
-                {/* <Image>
-
-                </Image> */}
+               
             </View>
             {/* will need to add logic to onclick push state to like or dislike page */}
             <View style={styles.symbol}>
-            <Feather onPress={like} name="thumbs-up" size={32} color="green"   />
-            <Feather onPress={dislike} name="thumbs-down" size={32} color="green"  />
+                <Feather onPress={like} name="thumbs-up" size={32} color="green" />
+                <Feather onPress={dislike} name="thumbs-down" size={32} color="green" />
             </View>
         </View>
     );

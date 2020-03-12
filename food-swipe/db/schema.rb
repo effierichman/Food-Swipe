@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_03_08_213507) do
     t.bigint "user_id", null: false
     t.bigint "food_id", null: false
     t.boolean "liked", default: false
+    t.index ["user_id", "food_id"], name: "index_foods_users_on_user_id_and_food_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

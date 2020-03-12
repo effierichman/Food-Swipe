@@ -8,5 +8,4 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
     has_and_belongs_to_many :foods
-    # belongs_to :food, through: :foods_users
 end

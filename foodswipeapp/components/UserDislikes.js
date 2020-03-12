@@ -14,9 +14,9 @@ function UserDislikes({ navigation }) {
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
             <Text style={styles.text}>User Dislikes Page</Text>
-        </View>
-        <View style={styles.symbol}>
-        <AntDesign onPress={like} name="delete" size={32} color="green"   />
+            <View style={styles.symbol}>
+                <AntDesign onPress={like} name="delete" size={32} color="green" />
+            </View>
         </View>
     );
 }

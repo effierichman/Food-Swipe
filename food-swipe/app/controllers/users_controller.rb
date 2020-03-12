@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    p params
     if @user.update(user_params)
       render json: @user
     else
@@ -37,6 +38,18 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
+  end
+  
+  # /users/add_liked_food/:food_id
+  def add_liked_food
+    @liked_foods = @current_user.foods
+    @food_to_like = Food.find(params[:food_id])
+    @liked_foods << @food_to_like
+  end
+
+   # /users/remove_liked_food/:food_id
+  def remove_liked_food
+   @current_user.foods.delete(Food.find(params[:food_id]))
   end
 
   private

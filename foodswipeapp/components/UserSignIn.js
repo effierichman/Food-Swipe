@@ -1,30 +1,71 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
-
+import axios from 'axios'
+import { AsyncStorage } from 'react-native';
+import {loginUser, verifyUser} from '../services/apiHelper'
+  
 function UserSignIn({ navigation }) {
-    const [userName, setUserName] = useState('')
-    const [password, setPassword] = useState('')
-    const navigateToUserHome = () => {
-        navigation.navigate("UserHome")
+    const [userForm, setUserForm] = useState({
+        username: '',
+        password: ''
+    })
+    const [currentUser, setCurrentUser] = useState(null)
+
+    const handleUsernameChange = (e) => {
+        console.log(e)
+        setUserForm(prevState => ({
+            ...prevState,
+            username: e
+        })
+        )
     }
+
+    const handlePasswordChange = (e) => {
+        console.log(e)
+        setUserForm(prevState => ({
+            ...prevState,
+            password: e
+        })
+        )
+    }
+
+    let { username, password } = userForm
+    
+    const handleSubmit = async () => {
+        let res = await loginUser({user: userForm})
+        const verify = await verifyUser()
+        setCurrentUser(verify)
+        console.log(res)
+    }
+    
+    useEffect(() => {
+        currentUser ?
+        navigation.navigate('UserHome') :
+        console.log('failed to sign in')
+    }, [currentUser])
+    
+    // const navigateToUserHome = () => {
+    //     navigation.navigate("UserHome")
+    // }
+
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Sign-In</Text>
             <TextInput
               style={styles.input}
-              onChangeText={text => setUserName(text)}
-              value={userName}
+              onChangeText={handleUsernameChange}
+              value={username}
               placeholder='User Name'
             />
             <TextInput
               style={styles.input}
-              onChangeText={text => setPassword(text)}
+              onChangeText={handlePasswordChange}
               value={password}
               secureTextEntry={true}
               placeholder='Password'
             />
-            <Button text='sign-in' color='white' helper={navigateToUserHome}/>
+            <Button text='sign-in' color='white' helper={handleSubmit}/>
         </View>
     );
 }
