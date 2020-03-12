@@ -5,6 +5,8 @@ import Button from './Button'
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 // import Swiper from 'react-native-deck-swiper'
+// import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
+// import { Navigation } from 'react-native-navigation';
 
 function UserHome({ navigation }) {
     const [likeFood, setLikeFood] = useState('')
