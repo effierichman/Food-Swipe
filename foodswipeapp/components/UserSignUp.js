@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
 import axios from 'axios'
+import registerUser from '../services/apiHelper'
 
 function UserSignUp({ navigation }) {
     const [userForm, setUserForm] = useState({

@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
 import axios from 'axios'
 import { AsyncStorage } from 'react-native';
-import {
-    loginUser
-  } from '../services/apiHelper'
+import {loginUser} from '../services/apiHelper'
   
 function UserSignIn({ navigation }) {
     const [userForm, setUserForm] = useState({
         username: '',
         password: ''
     })
+    const [currentUser, setCurrentUser] = useState(null)
 
     const handleUsernameChange = (e) => {
         console.log(e)
@@ -31,18 +30,22 @@ function UserSignIn({ navigation }) {
         )
     }
 
-    const handleSubmit = () => {
-        let data = { user: userForm }
-        // e.preventDefault()
-        let res = axios.post('http://localhost:3000/auth/login', data)
+    useEffect(() => {
+        currentUser ?
+        navigation.navigate('UserHome') :
+        console.log('fail')
+    }, [currentUser])
+
+    const handleSubmit = async () => {
+        let res = loginUser({user: userForm})
+        
+        setCurrentUser(res)
         console.log(res)
-        // navigation.navigate('UserHome')
     }
 
-    const navigateToUserHome = () => {
-        navigation.navigate("UserHome")
-    }
-
+    // const navigateToUserHome = () => {
+    //     navigation.navigate("UserHome")
+    // }
     let { username, password } = userForm
 
     return (

@@ -1460,3 +1460,87 @@ Processing by AuthenticationController#login as HTML
 Completed 200 OK in 220ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 7188)
 
 
+Started POST "/auth/login" for ::1 at 2020-03-12 10:55:39 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Steve", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Steve", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 128)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/authentication_controller.rb:27:in `login_params'
+app/controllers/authentication_controller.rb:6:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-12 10:56:40 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Brandon", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 124)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/authentication_controller.rb:27:in `login_params'
+app/controllers/authentication_controller.rb:6:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-12 10:58:44 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Brandon", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 124)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/authentication_controller.rb:27:in `login_params'
+app/controllers/authentication_controller.rb:6:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-12 11:04:16 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Brandon", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/authentication_controller.rb:27:in `login_params'
+app/controllers/authentication_controller.rb:6:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-12 11:05:53 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Brandon"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+Completed 200 OK in 211ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1096)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:13:11 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Brandon"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+Completed 200 OK in 205ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1099)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:13:30 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Brandon"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+Completed 200 OK in 226ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1014)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:19:19 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Brandon"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+Completed 200 OK in 206ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1014)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:30:19 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"username"=>"Brandon", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Brandon"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+Completed 200 OK in 260ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1098)
+
+
