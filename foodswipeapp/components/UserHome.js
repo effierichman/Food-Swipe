@@ -25,10 +25,7 @@ function UserHome({ navigation }) {
    useEffect(() => {
     foodImages()
    }, []) 
-    //api call
-    //functionn  rendor to run in view to check to see if there are food items waiting
-    //it will set foods as a pop to be rendered
-    //use image componnet to render
+    
     const like = () => {
        
     }
