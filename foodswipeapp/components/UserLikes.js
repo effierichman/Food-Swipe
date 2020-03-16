@@ -30,14 +30,18 @@ function UserLikes({ route, navigation }) {
                 data={user.foods}
                 extraData={user.foods}
                 keyExtractor={(item, index) => index.toString()}
-                contentContainerStyle={{ flex: .3, backgroundColor: "red" }}
+                contentContainerStyle={{ flex: .3, backgroundColor: "blue", color: "white" }}
                 renderItem={({ item }) => (
-                    <View>
+                    <View style={{borderWidth: 10, borderColor: "blue" }}>
                         {/* picture */}
-                        <Text>{item.name}</Text>
+                        <Text style={{color: "white"}}>{item.restaurant.image}</Text>
+                        <Text>{item.image}</Text>
                         <Text>{item.restaurant.name}</Text>
-                        {/* description */}
-                        {/* price */}
+                        <Text>{item.name}</Text>
+                        <Text>{item.description}</Text>
+                        <Text>{item.price}</Text>
+                        <Text>{item.restaurant.address}</Text>
+                        <Text>{item.restaurant.phone}</Text>
                     </View>
                 )}>
 
