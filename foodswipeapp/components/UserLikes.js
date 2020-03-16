@@ -1,11 +1,23 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View, Text, StyleSheet, TextInput, FlatList, TouchableWithoutFeedback } from 'react-native'
 import Button from './Button'
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+import { readUser } from '../services/apiHelper';
 
-function UserLikes({ navigation }) {
-    // const [userName, setUserName] = useState('')
+
+function UserLikes({ route, navigation }) {
+    let { id } = route.params
+    const getUser = async () => {
+        let tempUser = await readUser(id)
+        console.log(tempUser)
+        console.log(tempUser.foods)
+        setUser(tempUser)
+    }
+    const [user, setUser] = useState('')
+    useEffect(() => {
+        getUser()
+    }, [])
     // const [password, setPassword] = useState('')
     return (
         <View style={styles.container}>
@@ -14,12 +26,23 @@ function UserLikes({ navigation }) {
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
             <Text style={styles.text}>User Likes Page</Text>
-           
-        <View style={styles.symbol}>
-        <AntDesign onPress={like} name="delete" size={32} color="green"   />
+            <FlatList
+                data={user.foods}
+                extraData={user.foods}
+                keyExtractor={(item, index) => index.toString()}
+                contentContainerStyle={{ flex: .3, backgroundColor: "red" }}
+                renderItem={({ item }) => (
+                    <View>
+                        <Text>{item.name}</Text>
+                    </View>
+                )}>
+
+            </FlatList>
+            <View style={styles.symbol}>
+                <AntDesign name="delete" size={32} color="green" />
+            </View>
         </View>
-        </View>
-    
+
     );
 }
 
@@ -27,7 +50,6 @@ function UserLikes({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        resizeMode: "cover",
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "blue"
@@ -40,8 +62,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingLeft: 50,
         justifyContent: "flex-start",
-        backgroundColor: "blue",
-        bottom: 200
+        color: 'white',
+        backgroundColor: "blue"
     },
 
     text: {

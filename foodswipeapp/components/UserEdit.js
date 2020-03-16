@@ -43,7 +43,7 @@ function UserEdit({ navigation, route }) {
     const handleSubmit = () => {
         let res = modifyUser(userForm, userId)
         console.log(res)
-        navigation.navigate('UserSingIn')
+        navigation.navigate('UserSignIn')
         {/* add navigation to user home page when save is pressed */ }
     }
 

@@ -43,6 +43,14 @@ export const createUser = async (data) => {
   return resp.data
 }
 
+export const createLike =  async (food_id) => {
+  const resp = await api.post(`/users/add_liked_food/${food_id}`)
+}
+
+export const getLike =  async (food_id) => {
+  const resp = await api.post(`/users/add_liked_food/${food_id}`)
+}
+
 export const readAllUsers = async () => {
   const resp = await api.get('/users')
   return resp.data
@@ -53,6 +61,10 @@ export const updateUser = async (id, data) => {
   return resp.data
 }
 
+export const readUser = async (id) => {
+  const resp = await api.get(`/users/${id}`)
+  return resp.data
+}
 export const deleteUser = async (id) => {
   const resp = await api.delete(`/users/${id}`)
   return resp.data

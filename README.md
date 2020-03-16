@@ -103,14 +103,6 @@ ser authentication will allow the user's likes to be persistent._
 #### ERD Model
 <img src="https://i.ibb.co/RYmnjcK/Untitled-Diagram.jpg" alt="ERD">
 
-<!-- User has_many foods
-User has_many Reviews
-Foods has_many Reviews
-Foods belongs_to User
-Foods belongs_to Restaurant
-Foods belongs_to Restaurant
-Restaurant has_many foods -->
-
 #### Endpoints
 
 > Use this section to list a selection of your intended endpoints and their uses. Please list any and all custom-created endpoints.
@@ -148,27 +140,21 @@ After I am approved, I will start my backend. My goal is to have full CRUD and U
 
 | Task                | Priority | Estimated Time | Actual Time |
 | ------------------- | :------: | :------------: | :---------: |
-|  Models        |    H     |     3 hrs      |    2 hrs      |
+|  Models        |    H     |     3 hrs      |    5 hrs      |
 | Seed Data           |    H     |     4 hrs      |   1 hr     |
-| CRUD Routes  |    H     |     6 hrs      |     3 hrs     |
-|  User Authentication  |    H     |     7 hrs      |    1 hr      |
-| Front-end Authentication |    H     |     10 hrs      |         |
+| CRUD Routes  |    H     |     6 hrs      |     7 hrs     |
+|  User Authentication  |    H     |     7 hrs      |    4 hr      |
+| Front-end Authentication |    H     |     10 hrs      |    6 hrs     |
 | Header and Profile Button   |    M     |     4 hrs      |         |
-| Home Page  |    H     |     10 hrs      |     3 hrs    |
-| Likes Page  |    H     |     4 hrs      |    1 hr      |
+| Home Page  |    H     |     10 hrs      |     15 hrs    |
+| Likes Page  |    H     |     4 hrs      |    6 hr      |
 | Edit Page  |    H     |     7 hrs      |         |
-| CSS  |    M     |     10 hrs      |     2.75 hrs    |
-| TOTAL               |          |     65 hrs      |    7 hrs 50 min   |
-
-
-
-
+| CSS  |    M     |     10 hrs      |     13 hrs    |
+| TOTAL               |          |     65 hrs      |    68 hrs  |
 
 <br>
 
 ### Schedule
-
-> Use this section to look at your project week and plan out when and what you want to do.
 
 |  Day   | Deliverables                              |
 | ------ | ----------------------------------------- |
@@ -177,10 +163,10 @@ After I am approved, I will start my backend. My goal is to have full CRUD and U
 |Mar 6th | Get approved and start backend with rails |
 |Mar 7th | OFF                                       |
 |Mar 8th | impliment user auth                       |
-|Mar 9th | styling                                   |
-|Mar 10th|  OFF (Jewish Holiday)                    |
-|Mar 11th|  MVP, begin post-MVP                                  |
-|Mar 12th| post-MVP                                |
+|Mar 9th | styling, Get hit by Cab                   |
+|Mar 10th|  OFF (Jewish Holiday)                     |
+|Mar 11th|  MVP, begin post-MVP                      |
+|Mar 12th| post-MVP                                  |
 |Mar 13th| final presentations                       |
 
 <br>

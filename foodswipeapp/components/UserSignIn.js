@@ -3,9 +3,12 @@ import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
 import axios from 'axios'
 import { AsyncStorage } from 'react-native';
-import { loginUser, verifyUser } from '../services/apiHelper'
+import { loginUser, verifyUser, getFoods } from '../services/apiHelper'
+
+
 
 function UserSignIn({ navigation }) {
+    const [foods, setFoods] = useState([])
     const [userForm, setUserForm] = useState({
         username: '',
         password: ''
@@ -41,7 +44,7 @@ function UserSignIn({ navigation }) {
 
     useEffect(() => {
         currentUser ?
-            navigation.navigate('UserHome', { user: currentUser }) :
+            navigation.navigate('UserHome', { user: currentUser, foods: foods }) :
             console.log('failed to sign in')
     }, [currentUser])
 
@@ -49,6 +52,14 @@ function UserSignIn({ navigation }) {
     //     navigation.navigate("UserHome")
     // }
 
+    const foodGrabber = async () => {
+        const resp = await getFoods()
+        setFoods(resp)
+    }
+
+    useEffect(() => {
+        foodGrabber()
+    }, [])
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Sign-In</Text>

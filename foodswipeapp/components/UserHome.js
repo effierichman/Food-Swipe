@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, TextInput, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Image, ActivityIndicator } from 'react-native'
 // import { Tile } from 'react-native-elements';
 import Button from './Button'
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
@@ -8,59 +8,54 @@ import { Header } from 'react-native/Libraries/NewAppScreen';
 // import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 // import { Navigation } from 'react-native-navigation';
 import axios from 'axios';
-import { getFoods } from '../services/apiHelper'
+import { getFoods, createLike } from '../services/apiHelper'
 
 export default function UserHome({ route, navigation }) {
-    const [likeFood, setLikeFood] = useState('')
-    const [dilikeFood, setDislikeFood] = useState('')
-    const [food, setFood] = useState([])
-    const { user } = route.params
+    const { user, foods } = route.params
     const { id, username } = user
-    console.log(id)
+
+    const [likeFood, setLikeFood] = useState('')
+    const [dislikeFood, setDislikeFood] = useState('')
+    const [allFood, setAllFood] = useState(foods)
+    const [tempFood, setTempFood] = useState(null)
 
     const navigateToUserMenu = () => {
-        navigation.navigate("UserMenu", {user: user})
+        navigation.navigate("UserMenu", { user: user })
     }
+
+    console.log('This is the Foods array')
+    console.log(foods)
     useEffect(() => {
-        const foodTemp = getFoods()
-        console.log(foodTemp)
-        setFood(foodTemp)
+        foodPopper()
     }, [])
 
+    const foodPopper = async () => {
 
-
-    const renderImage = () => {
-        let currentFood = []
-        let temp
-        // food.length > 0
-        if (food.length > 0) {
-            temp = food.pop()
-            currentFood.push(temp)
-            console.log(currentFood)
-            currentFood.map((item) => {
-                console.log(item)
-                return (
-                    // <Image
-                    //     style={{ width: 100, height: 100 }}
-                    //     source={{ uri: item.image }} />
-                    <Text>This is an Image</Text>
-                )
-            })
+        if (allFood.length > 0) {
+            setTempFood(allFood.pop())
+            console.log(tempFood)
         } else {
-            //Repopulate food array
-            return (
-                <View>
-                    <Text>Loading</Text>
-                </View>
-            )
+            setAllFood(await getFoods())
+            await setTempFood(allFood.pop())
+
         }
     }
 
-    const like = () => {
+    const renderImage = () => {
+        return (
+            <Image
+                style={{ flex: 1 }}
+                source={{ uri: tempFood.image }} />
 
+        )
     }
-    const dislike = () => {
 
+    const handleLike = () => {
+        createLike(tempFood.id)
+        foodPopper()
+    }
+    const handleDislike = () => {
+        foodPopper()
     }
     return (
         <View style={styles.container}>
@@ -72,12 +67,18 @@ export default function UserHome({ route, navigation }) {
 
             </View>
             <View style={styles.card}>
-                {renderImage()}
+                {tempFood ?
+                    renderImage() :
+                    <View>
+                        <ActivityIndicator size="large" color="#0000ff" />
+                        <Text>Click Like or Dislike for the Next Batch of Food</Text>
+                    </View>
+                }
             </View>
             <View style={styles.symbol}>
 
-                <Feather onPress={dislike} name="thumbs-down" size={32} color="green" />
-                <Feather onPress={like} name="thumbs-up" size={32} color="green" />
+                <Feather onPress={handleDislike} name="thumbs-down" size={32} color="green" />
+                <Feather onPress={handleLike} name="thumbs-up" size={32} color="green" />
             </View>
         </View>
     );
