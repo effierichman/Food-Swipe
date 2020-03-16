@@ -7,7 +7,8 @@ import { modifyUser, deleteUser } from '../services/apiHelper'
 
 function UserEdit({ navigation, route }) {
     let { user } = route.params
-    const { id, username } = user
+    const { id: userId } = user
+
     const [userForm, setUserForm] = useState({
         username: '',
         password: '',
@@ -42,19 +43,19 @@ function UserEdit({ navigation, route }) {
     const handleSubmit = () => {
         let res = modifyUser(userForm, userId)
         console.log(res)
-        navigation.navigate('UserHome')
-        {/* add navigation to user home page when save is pressed */}
+        navigation.navigate('UserSingIn')
+        {/* add navigation to user home page when save is pressed */ }
     }
 
-const handleDelete = () => {
-    let res = deleteUser(userId)
-    console.log(res)
-    navigation.navigate('Landing')
-}
+    const handleDelete = () => {
+        let res = deleteUser(userId)
+        console.log(res)
+        navigation.navigate('Landing')
+    }
 
-    
+
     let { username, password, email } = userForm
-    
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -73,7 +74,6 @@ const handleDelete = () => {
                     style={styles.input}
                     onChangeText={handleEmailChange}
                     value={email}
-                    secureTextEntry={true}
                     placeholder='Email'
                 />
                 <TextInput
@@ -84,7 +84,7 @@ const handleDelete = () => {
                     placeholder='Password'
                 />
 
-                <Button text='Save' color='white' helper={handleSubmit}/>
+                <Button text='Save' color='white' helper={handleSubmit} />
                 <Button text='Delete Account' color='white' helper={handleDelete} />
                 {/* add navigation to landing page when delete account is pressed */}
             </View>

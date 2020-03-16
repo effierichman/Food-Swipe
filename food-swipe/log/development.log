@@ -5599,3 +5599,106 @@ Processing by FoodsController#index as HTML
 Completed 200 OK in 64ms (Views: 32.9ms | ActiveRecord: 30.2ms | Allocations: 1737)
 
 
+Started POST "/auth/login" for ::1 at 2020-03-16 13:53:29 -0400
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as HTML
+  Parameters: {"user"=>{"username"=>"Brandon1", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"username"=>"Brandon1", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Brandon1"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+Completed 200 OK in 221ms (Views: 0.5ms | ActiveRecord: 9.2ms | Allocations: 8777)
+
+
+Started POST "/auth/verify" for ::1 at 2020-03-16 13:53:30 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 933)
+
+
+Started GET "/foods" for ::1 at 2020-03-16 13:53:30 -0400
+Processing by FoodsController#index as HTML
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:9:in `index'
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 2.5ms | Allocations: 8747)
+
+
+Started PUT "/users/1" for ::1 at 2020-03-16 13:55:06 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"username"=>"Brandon2", "email"=>"brandon@brndon.com", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Brandon2"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "brandon@brndon.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "email" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["username", "Brandon2"], ["email", "brandon@brndon.com"], ["password_digest", "$2a$12$yICn/Ejk1pjWndHXMrQ.iectw6dJzH7ZcvhyOENGMut0CiXgxrsYS"], ["updated_at", "2020-03-16 17:55:06.506717"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 200 OK in 218ms (Views: 0.3ms | ActiveRecord: 4.6ms | Allocations: 6343)
+
+
+Started PUT "/users/1" for ::1 at 2020-03-16 13:57:12 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"username"=>"Brandon", "email"=>"brandon@gottshall.dev", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Brandon"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "brandon@gottshall.dev"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "email" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["username", "Brandon"], ["email", "brandon@gottshall.dev"], ["password_digest", "$2a$12$6U3fK3DPWHV17qN84jIvMeboS4mp7SFfsBlRLdSuMTHBsoSVFiMb6"], ["updated_at", "2020-03-16 17:57:13.002015"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 200 OK in 211ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 5802)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-16 13:57:28 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "username"=>"Brandon"}, "authentication"=>{"user"=>{"password"=>"[FILTERED]", "username"=>"Brandon"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Brandon"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+Completed 200 OK in 202ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1014)
+
+
+Started POST "/auth/verify" for ::1 at 2020-03-16 13:57:28 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `authorize_request'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 820)
+
+
+Started GET "/foods" for ::1 at 2020-03-16 13:57:28 -0400
+Processing by FoodsController#index as HTML
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/controllers/foods_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1737)
+
+
+Started DELETE "/users/1" for ::1 at 2020-03-16 13:58:14 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `authorize_request'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mUser::HABTM_Foods Destroy (3.0ms)[0m  [1m[31mDELETE FROM "foods_users" WHERE "foods_users"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:40:in `destroy'
+Completed 204 No Content in 31ms (ActiveRecord: 10.9ms | Allocations: 7335)
+
+

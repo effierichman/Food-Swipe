@@ -18,7 +18,7 @@ function UserMenu({ navigation, route }) {
         navigation.navigate('UserReviews')
     }
     const navigateToUserEdit = () => {
-        navigation.navigate('UserEdit', { user: currentUser })
+        navigation.navigate('UserEdit', { user: user })
     }
     return (
         <View style={styles.container}>
