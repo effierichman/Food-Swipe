@@ -3,9 +3,12 @@ import { View, Text, StyleSheet, TextInput } from 'react-native'
 import Button from './Button'
 import axios from 'axios'
 import { AsyncStorage } from 'react-native';
-import {loginUser, verifyUser} from '../services/apiHelper'
-  
+import { loginUser, verifyUser, getFoods } from '../services/apiHelper'
+
+
+
 function UserSignIn({ navigation }) {
+    const [foods, setFoods] = useState([])
     const [userForm, setUserForm] = useState({
         username: '',
         password: ''
@@ -31,41 +34,49 @@ function UserSignIn({ navigation }) {
     }
 
     let { username, password } = userForm
-    
+
     const handleSubmit = async () => {
-        let res = await loginUser({user: userForm})
+        let res = await loginUser({ user: userForm })
         const verify = await verifyUser()
         setCurrentUser(verify)
         console.log(res)
     }
-    
+
     useEffect(() => {
         currentUser ?
-        navigation.navigate('UserHome') :
-        console.log('failed to sign in')
+            navigation.navigate('UserHome', { user: currentUser, foods: foods }) :
+            console.log('failed to sign in')
     }, [currentUser])
-    
+
     // const navigateToUserHome = () => {
     //     navigation.navigate("UserHome")
     // }
 
+    const foodGrabber = async () => {
+        const resp = await getFoods()
+        setFoods(resp)
+    }
+
+    useEffect(() => {
+        foodGrabber()
+    }, [])
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Sign-In</Text>
             <TextInput
-              style={styles.input}
-              onChangeText={handleUsernameChange}
-              value={username}
-              placeholder='User Name'
+                style={styles.input}
+                onChangeText={handleUsernameChange}
+                value={username}
+                placeholder='User Name'
             />
             <TextInput
-              style={styles.input}
-              onChangeText={handlePasswordChange}
-              value={password}
-              secureTextEntry={true}
-              placeholder='Password'
+                style={styles.input}
+                onChangeText={handlePasswordChange}
+                value={password}
+                secureTextEntry={true}
+                placeholder='Password'
             />
-            <Button text='sign-in' color='white' helper={handleSubmit}/>
+            <Button text='sign-in' color='white' helper={handleSubmit} />
         </View>
     );
 }
@@ -84,7 +95,7 @@ const styles = StyleSheet.create({
         color: "red",
         fontSize: 30,
         fontWeight: "bold",
-        bottom: 200,
+        marginBottom: 100,
         fontSize: 50
     },
     input: {

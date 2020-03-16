@@ -4,11 +4,13 @@ import Button from './Button'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
-function UserMenu({ navigation }) {
+function UserMenu({ navigation, route }) {
+    let { user } = route.params
+    let { id } = user
     // const [userName, setUserName] = useState('')
     // const [password, setPassword] = useState('')
     const navigateToUserLikes = () => {
-        navigation.navigate('UserLikes')
+        navigation.navigate('UserLikes', { id: id})
     }
     const navigateToUserDislike = () => {
         navigation.navigate('UserDislikes')
@@ -17,7 +19,7 @@ function UserMenu({ navigation }) {
         navigation.navigate('UserReviews')
     }
     const navigateToUserEdit = () => {
-        navigation.navigate('UserEdit')
+        navigation.navigate('UserEdit', { user: user })
     }
     return (
         <View style={styles.container}>

@@ -14,15 +14,15 @@ function Landing({ navigation }) {
 
         <View style={styles.container}>
             <View>
-            <ImageBackground
-          style={{width: 405, height: 675, bottom: -25}}
-         source={{uri: 'https://i.imgur.com/qisXP18.jpg'}}>
-            <Text style={styles.text}>Food-Swipe</Text>
-            <View style={styles.button}>
-            <Button  helper={navigationUserSignUp} text="Sign-Up" color="white" />
-            <Button helper={navigationUserSignIn} text="Sign-In" color="white" />
-            </View>
-            </ImageBackground>
+                <ImageBackground
+                    style={{ width: 405, height: 675, bottom: -25 }}
+                    source={{ uri: 'https://i.imgur.com/qisXP18.jpg' }}>
+                    <Text style={styles.text}>Food-Swipe</Text>
+                    <View style={styles.button}>
+                        <Button helper={navigationUserSignUp} text="Sign-Up" color="white" />
+                        <Button helper={navigationUserSignIn} text="Sign-In" color="white" />
+                    </View>
+                </ImageBackground>
 
             </View>
         </View>
@@ -37,14 +37,12 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "rgb(247, 225, 156)"
-
     },
 
     text: {
         color: "white",
         fontSize: 50,
         fontWeight: "bold",
-        bottom: 200,
         textAlign: "center",
         paddingTop: 140
     },

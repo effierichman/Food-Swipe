@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, TextInput, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Image, ActivityIndicator } from 'react-native'
 // import { Tile } from 'react-native-elements';
 import Button from './Button'
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
@@ -8,71 +8,77 @@ import { Header } from 'react-native/Libraries/NewAppScreen';
 // import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 // import { Navigation } from 'react-native-navigation';
 import axios from 'axios';
+import { getFoods, createLike } from '../services/apiHelper'
 
-function UserHome({ navigation }) {
+export default function UserHome({ route, navigation }) {
+    const { user, foods } = route.params
+    const { id, username } = user
+
     const [likeFood, setLikeFood] = useState('')
-    const [dilikeFood, setDislikeFood] = useState('')
-    const [food, setFood] = useState([])
-    
+    const [dislikeFood, setDislikeFood] = useState('')
+    const [allFood, setAllFood] = useState(foods)
+    const [tempFood, setTempFood] = useState(null)
+
     const navigateToUserMenu = () => {
-        navigation.navigate("UserMenu")
+        navigation.navigate("UserMenu", { user: user })
     }
-    const baseUrl = 'http://localhost:3000'
-   const foodImages = async () => {
-    let res = await axios.get(`${baseUrl}/foods`)
-    setFood(res.data)   }
-    console.log(food)
-   useEffect(() => {
-    foodImages()
-   }, []) 
-    
-  
-    const rendorImage = () => {
 
-        if (food > 0) {
-            let images = food.pop()
+    console.log('This is the Foods array')
+    console.log(foods)
+    useEffect(() => {
+        foodPopper()
+    }, [])
 
-    
-    console.log('imageshoudl be here')
-    console.log(images)
+    const foodPopper = async () => {
 
-    // .map((item, index) => {
-    //     console.log('item is here')
-    //     console.log(item)
-    //     console.log(item.image)
-    
-        return(
-            <Image 
-            style={{ width: 100, height: 100 }}
-            source={{uri : images.image}} />
+        if (allFood.length > 0) {
+            setTempFood(allFood.pop())
+            console.log(tempFood)
+        } else {
+            setAllFood(await getFoods())
+            await setTempFood(allFood.pop())
+
+        }
+    }
+
+    const renderImage = () => {
+        return (
+            <Image
+                style={{ flex: 1 }}
+                source={{ uri: tempFood.image }} />
+
         )
     }
+
+    const handleLike = () => {
+        createLike(tempFood.id)
+        foodPopper()
     }
-    
-    const like = () => {
-       
-    }
-    const dislike = () => {
-        
+    const handleDislike = () => {
+        foodPopper()
     }
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
-                <Text style={styles.text}>User Name</Text>
-
                 <MaterialCommunityIcons name="account" size={32} color="green" onPress={() => navigateToUserMenu()} />
+                <Text style={styles.text}>{username}</Text>
+
 
             </View>
-            <View>
-            {rendorImage()}
-               
+            <View style={styles.card}>
+                {tempFood ?
+                    renderImage() :
+                    <View>
+                        <ActivityIndicator size="large" color="#0000ff" />
+                        <Text>Click Like or Dislike for the Next Batch of Food</Text>
+                    </View>
+                }
             </View>
-           
             <View style={styles.symbol}>
 
-                <Feather onPress={dislike} name="thumbs-down" size={32} color="green" />
-                <Feather onPress={like} name="thumbs-up" size={32} color="green" />
+                <Feather onPress={handleDislike} name="thumbs-down" size={32} color="green" />
+                <Feather onPress={handleLike} name="thumbs-up" size={32} color="green" />
             </View>
         </View>
     );
@@ -82,42 +88,44 @@ function UserHome({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        resizeMode: "cover",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-end",
         backgroundColor: "rgb(247, 225, 156)"
     },
 
     header: {
         flex: .3,
         width: 400,
+        marginTop: 50,
         flexDirection: 'row',
+        flexWrap: 'wrap',
         alignItems: "center",
         paddingLeft: 50,
         justifyContent: "flex-start",
-        backgroundColor: "rgb(247, 225, 156)",
-        bottom: 200
+        backgroundColor: "rgb(247, 225, 156)"
     },
 
     text: {
         color: "blue",
         width: 300,
-        fontSize: 30,
-        fontWeight: "bold",
-        fontSize: 50
+        fontSize: 50,
+        fontWeight: "bold"
     },
 
     symbol: {
         flex: .3,
-        width: 400,
+        width: 450,
         flexDirection: 'row',
         alignItems: "center",
         paddingLeft: 100,
         paddingRight: 100,
         justifyContent: "space-between",
         backgroundColor: "rgb(247, 225, 156)",
-        bottom: 200
+    },
+    card: {
+        flex: .5,
+        height: 800,
+        width: 200,
+        backgroundColor: 'red'
     }
 })
-
-export default UserHome
