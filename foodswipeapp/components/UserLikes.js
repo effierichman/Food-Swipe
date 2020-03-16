@@ -33,7 +33,11 @@ function UserLikes({ route, navigation }) {
                 contentContainerStyle={{ flex: .3, backgroundColor: "red" }}
                 renderItem={({ item }) => (
                     <View>
+                        {/* picture */}
                         <Text>{item.name}</Text>
+                        <Text>{item.restaurant.name}</Text>
+                        {/* description */}
+                        {/* price */}
                     </View>
                 )}>
 
