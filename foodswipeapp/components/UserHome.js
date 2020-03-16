@@ -26,34 +26,46 @@ function UserHome({ navigation }) {
     foodImages()
    }, []) 
     
+  
+    const rendorImage = () => {
+
+        if (food > 0) {
+            let images = food.pop()
+
+    
+    console.log('imageshoudl be here')
+    console.log(images)
+
+    // .map((item, index) => {
+    //     console.log('item is here')
+    //     console.log(item)
+    //     console.log(item.image)
+    
+        return(
+            <Image 
+            style={{ width: 100, height: 100 }}
+            source={{uri : images.image}} />
+        )
+    }
+    }
+    
     const like = () => {
        
     }
     const dislike = () => {
         
     }
-
-    let images = food.map((item, index) => {
-        console.log('item is here')
-        console.log(item)
-        console.log(item.image)
-        return(
-            <Image 
-            style={{ width: 400, height: 400 }}
-            source={{url : item.image}} key={index}/>
-        )
-    })
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
+                <Text style={styles.text}>User Name</Text>
 
                 <MaterialCommunityIcons name="account" size={32} color="green" onPress={() => navigateToUserMenu()} />
 
             </View>
             <View>
-            {images}
+            {rendorImage()}
                
             </View>
            
