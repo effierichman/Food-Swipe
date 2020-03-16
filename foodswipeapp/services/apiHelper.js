@@ -13,12 +13,19 @@ export const loginUser = async (loginData) => {
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
   return resp.data.user
 }
-
+export const modifyUser = async (modifyData, userId) => {
+  const resp = await api.put(`/users/${userId}`, { user: modifyData })
+}
 export const registerUser = async (registerData) => {
   const resp = await api.post('/users/', { user: registerData })
-//   AsyncStorage.setItem('authToken', resp.data.token);
+  //   AsyncStorage.setItem('authToken', resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
   return resp.data.user
+}
+
+export const getFoods = async () => {
+  let res = await axios.get(`${baseUrl}/foods`)
+  return res.data
 }
 
 export const verifyUser = async () => {
@@ -31,31 +38,22 @@ export const verifyUser = async () => {
   return false
 }
 
-const createUser = async (data) => {
+export const createUser = async (data) => {
   const resp = await api.post('/users', { user: data })
   return resp.data
 }
 
-const readAllUsers = async () => {
+export const readAllUsers = async () => {
   const resp = await api.get('/users')
   return resp.data
 }
 
-const updateUser = async (id, data) => {
+export const updateUser = async (id, data) => {
   const resp = await api.put(`/users/${id}`, { user: data })
   return resp.data
 }
 
-const destroyUser = async (id) => {
+export const deleteUser = async (id) => {
   const resp = await api.delete(`/users/${id}`)
   return resp.data
-}
-
-
-
-export {
-  createUser,
-  readAllUsers,
-  updateUser,
-  destroyUser
 }

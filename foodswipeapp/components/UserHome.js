@@ -8,67 +8,72 @@ import { Header } from 'react-native/Libraries/NewAppScreen';
 // import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 // import { Navigation } from 'react-native-navigation';
 import axios from 'axios';
+import { getFoods } from '../services/apiHelper'
 
-function UserHome({ navigation }) {
+export default function UserHome({ route, navigation }) {
     const [likeFood, setLikeFood] = useState('')
     const [dilikeFood, setDislikeFood] = useState('')
     const [food, setFood] = useState([])
-    
+    const { user } = route.params
+    const { id, username } = user
+    console.log(id)
+
     const navigateToUserMenu = () => {
-        navigation.navigate("UserMenu")
+        navigation.navigate("UserMenu", {user: user})
     }
-    const baseUrl = 'http://localhost:3000'
-   const foodImages = async () => {
-    let res = await axios.get(`${baseUrl}/foods`)
-    setFood(res.data)   }
-    console.log(food)
-   useEffect(() => {
-    foodImages()
-   }, []) 
-    
-  
-    const rendorImage = () => {
+    useEffect(() => {
+        const foodTemp = getFoods()
+        console.log(foodTemp)
+        setFood(foodTemp)
+    }, [])
 
-        if (food > 0) {
-            let images = food.pop()
 
-    
-    console.log('imageshoudl be here')
-    console.log(images)
 
-    // .map((item, index) => {
-    //     console.log('item is here')
-    //     console.log(item)
-    //     console.log(item.image)
-    
-        return(
-            <Image 
-            style={{ width: 100, height: 100 }}
-            source={{uri : images.image}} />
-        )
+    const renderImage = () => {
+        let currentFood = []
+        let temp
+        // food.length > 0
+        if (food.length > 0) {
+            temp = food.pop()
+            currentFood.push(temp)
+            console.log(currentFood)
+            currentFood.map((item) => {
+                console.log(item)
+                return (
+                    // <Image
+                    //     style={{ width: 100, height: 100 }}
+                    //     source={{ uri: item.image }} />
+                    <Text>This is an Image</Text>
+                )
+            })
+        } else {
+            //Repopulate food array
+            return (
+                <View>
+                    <Text>Loading</Text>
+                </View>
+            )
+        }
     }
-    }
-    
+
     const like = () => {
-       
+
     }
     const dislike = () => {
-        
+
     }
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
-                <Text style={styles.text}>User Name</Text>
-
                 <MaterialCommunityIcons name="account" size={32} color="green" onPress={() => navigateToUserMenu()} />
+                <Text style={styles.text}>{username}</Text>
+
 
             </View>
-            <View>
-            {rendorImage()}
-               
+            <View style={styles.card}>
+                {renderImage()}
             </View>
-           
             <View style={styles.symbol}>
 
                 <Feather onPress={dislike} name="thumbs-down" size={32} color="green" />
@@ -82,42 +87,44 @@ function UserHome({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        resizeMode: "cover",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-end",
         backgroundColor: "rgb(247, 225, 156)"
     },
 
     header: {
         flex: .3,
         width: 400,
+        marginTop: 50,
         flexDirection: 'row',
+        flexWrap: 'wrap',
         alignItems: "center",
         paddingLeft: 50,
         justifyContent: "flex-start",
-        backgroundColor: "rgb(247, 225, 156)",
-        bottom: 200
+        backgroundColor: "rgb(247, 225, 156)"
     },
 
     text: {
         color: "blue",
         width: 300,
-        fontSize: 30,
-        fontWeight: "bold",
-        fontSize: 50
+        fontSize: 50,
+        fontWeight: "bold"
     },
 
     symbol: {
         flex: .3,
-        width: 400,
+        width: 450,
         flexDirection: 'row',
         alignItems: "center",
         paddingLeft: 100,
         paddingRight: 100,
         justifyContent: "space-between",
         backgroundColor: "rgb(247, 225, 156)",
-        bottom: 200
+    },
+    card: {
+        flex: .5,
+        height: 800,
+        width: 200,
+        backgroundColor: 'red'
     }
 })
-
-export default UserHome
