@@ -36,7 +36,11 @@ function UserEdit({ navigation }) {
               secureTextEntry={true}
               placeholder='Password'
             />
+            
             <Button text='Save' color='white'/>
+            {/* add navigation to user home page when save is pressed */}
+            <Button text='Delete Account' color='white'/>
+            {/* add navigation to landing page when delete account is pressed */}
             </View>
         </View>
     );
