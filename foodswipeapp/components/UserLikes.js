@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, TextInput, FlatList, TouchableWithoutFeedback } from 'react-native'
+import { View, Text, StyleSheet, TextInput, FlatList, TouchableWithoutFeedback, Image } from 'react-native'
 import Button from './Button'
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
@@ -30,10 +30,16 @@ function UserLikes({ route, navigation }) {
                 data={user.foods}
                 extraData={user.foods}
                 keyExtractor={(item, index) => index.toString()}
-                contentContainerStyle={{ flex: .3, backgroundColor: "blue", color: "white" }}
+                contentContainerStyle={{  backgroundColor: "blue", color: "white" }}
                 renderItem={({ item }) => (
                     <View style={{borderWidth: 10, borderColor: "blue" }}>
                         {/* picture */}
+                        {console.log(item.restaurant.image)}
+                        {console.log(item.image)}
+                        <Image
+                            style={{width: 200, height: 100}}
+                            source={{uri: `${item.restaurant.image}`}}
+                        />
                         {/* <Text style={{color: "white"}}>{item.restaurant.image}</Text>
                         <Text>{item.image}</Text> */}
                         <Text>Restaurant: {item.restaurant.name}</Text>
@@ -46,9 +52,9 @@ function UserLikes({ route, navigation }) {
                 )}>
 
             </FlatList>
-            <View style={styles.symbol}>
+            {/* <View style={styles.symbol}>
                 <AntDesign name="delete" size={32} color="green" />
-            </View>
+            </View> */}
         </View>
 
     );

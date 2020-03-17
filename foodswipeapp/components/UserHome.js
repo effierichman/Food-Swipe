@@ -50,13 +50,15 @@ export default function UserHome({ route, navigation }) {
         )
     }
 
-    const handleLike = () => {
-        createLike(tempFood.id)
-        foodPopper()
+    const handleLike = async () => {
+          await  foodPopper()
+            createLike(tempFood.id)
     }
     const handleDislike = () => {
         foodPopper()
     }
+
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
