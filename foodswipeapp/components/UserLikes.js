@@ -34,14 +34,14 @@ function UserLikes({ route, navigation }) {
                 renderItem={({ item }) => (
                     <View style={{borderWidth: 10, borderColor: "blue" }}>
                         {/* picture */}
-                        <Text style={{color: "white"}}>{item.restaurant.image}</Text>
-                        <Text>{item.image}</Text>
-                        <Text>{item.restaurant.name}</Text>
-                        <Text>{item.name}</Text>
-                        <Text>{item.description}</Text>
-                        <Text>{item.price}</Text>
-                        <Text>{item.restaurant.address}</Text>
-                        <Text>{item.restaurant.phone}</Text>
+                        {/* <Text style={{color: "white"}}>{item.restaurant.image}</Text>
+                        <Text>{item.image}</Text> */}
+                        <Text>Restaurant: {item.restaurant.name}</Text>
+                        <Text>Item: {item.name}</Text>
+                        <Text>Description: {item.description}</Text>
+                        <Text>Price: {item.price}</Text>
+                        <Text>Adress: {item.restaurant.address}</Text>
+                        <Text>Phone Number: {item.restaurant.phone}</Text>
                     </View>
                 )}>
 
