@@ -25,20 +25,21 @@ function UserLikes({ route, navigation }) {
                 <Text style={styles.text}>Food-Swipe</Text>
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
-            <Text style={styles.text}>User Likes Page</Text>
+            {/* <Text style={styles.text}>User Likes Page</Text> */}
             <FlatList
                 data={user.foods}
                 extraData={user.foods}
                 keyExtractor={(item, index) => index.toString()}
-                contentContainerStyle={{  backgroundColor: "blue", color: "white" }}
+                contentContainerStyle={{  backgroundColor: "rgb(247, 225, 156)", color: "white" }}
                 renderItem={({ item }) => (
-                    <View style={{borderWidth: 10, borderColor: "blue" }}>
-                        {/* picture */}
-                        {console.log(item.restaurant.image)}
-                        {console.log(item.image)}
+                    <View style={{borderWidth: 10, borderColor: "rgb(247, 225, 156)" }}>
                         <Image
-                            style={{width: 200, height: 100}}
+                            style={{width: 300, height: 100}}
                             source={{uri: `${item.restaurant.image}`}}
+                        />
+                        <Image
+                            style={{width: 300, height: 100}}
+                            source={{uri: `${item.image}`}}
                         />
                         {/* <Text style={{color: "white"}}>{item.restaurant.image}</Text>
                         <Text>{item.image}</Text> */}
@@ -66,7 +67,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "blue"
+        backgroundColor: "rgb(247, 225, 156)",
+        textAlign: "center",
+        flexWrap: "wrap"
     },
 
     header: {
@@ -76,8 +79,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingLeft: 50,
         justifyContent: "flex-start",
-        color: 'white',
-        backgroundColor: "blue"
+        color: 'black',
+        backgroundColor: "rgb(247, 225, 156)",
+        // marginTop: 2 
     },
 
     text: {
