@@ -48,10 +48,6 @@ function UserSignIn({ navigation }) {
             console.log('failed to sign in')
     }, [currentUser])
 
-    // const navigateToUserHome = () => {
-    //     navigation.navigate("UserHome")
-    // }
-
     const foodGrabber = async () => {
         const resp = await getFoods()
         setFoods(resp)

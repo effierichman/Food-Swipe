@@ -83,10 +83,12 @@ function UserEdit({ navigation, route }) {
                     secureTextEntry={true}
                     placeholder='Password'
                 />
+                <View style={styles.buttonContainer}>
 
-                <Button style={styles.buttons} text='Save' color='white' helper={handleSubmit} />
+                <Button style={styles.buttons} text='Save' color='green' helper={handleSubmit} />
                 <Button style={styles.buttons} text='Delete Account' color='white' helper={handleDelete} />
-                {/* add navigation to landing page when delete account is pressed */}
+                </View>
+                
             </View>
         </View>
     );
@@ -130,6 +132,9 @@ const styles = StyleSheet.create({
     },
     buttons: {
         paddingLeft: 70
+    },
+    buttonContainer: {
+        marginRight: 10
     }
 })
 

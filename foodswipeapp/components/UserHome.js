@@ -32,8 +32,7 @@ export default function UserHome({ route, navigation }) {
     const foodPopper = async () => {
 
         if (allFood.length > 0) {
-            setTempFood(allFood.pop())
-            console.log(tempFood)
+           await setTempFood(allFood.pop())
         } else {
             setAllFood(await getFoods())
             await setTempFood(allFood.pop())
@@ -65,7 +64,7 @@ export default function UserHome({ route, navigation }) {
                 <Text style={styles.text}>Food-Swipe</Text>
                 <MaterialCommunityIcons name="account" size={32} color="green" onPress={() => navigateToUserMenu()} />
                 <View>
-                    <Text style={{textAlign: "center", color: "teal", fontSize: 25, paddingTop: 30, paddingLeft: 90,fontWeight: "bold"}}>{username}</Text> 
+                    <Text style={{textAlign: "center", color: "teal", fontSize: 25, paddingTop: 30, paddingLeft: 80,fontWeight: "bold"}}>{username}</Text> 
                 </View> 
 
 
@@ -81,8 +80,8 @@ export default function UserHome({ route, navigation }) {
             </View>
             <View style={styles.symbol}>
 
-                <Feather onPress={handleDislike} name="thumbs-down" size={32} color="green" />
-                <Feather onPress={handleLike} name="thumbs-up" size={32} color="green" />
+                <Feather onPress={handleDislike} name="thumbs-down" size={40} color="green" />
+                <Feather onPress={handleLike} name="thumbs-up" size={40} color="green" />
             </View>
         </View>
     );

@@ -5,8 +5,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
 function UserReviews({ navigation }) {
-    // const [userName, setUserName] = useState('')
-    // const [password, setPassword] = useState('')
     return (
         <View style={styles.container}>
             <View style={styles.header}>
