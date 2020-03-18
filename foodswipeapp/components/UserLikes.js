@@ -30,23 +30,30 @@ function UserLikes({ route, navigation }) {
                 data={user.foods}
                 extraData={user.foods}
                 keyExtractor={(item, index) => index.toString()}
-                contentContainerStyle={{  backgroundColor: "rgb(247, 225, 156)", color: "white"}}
+                contentContainerStyle={{ backgroundColor: "rgb(247, 225, 156)", color: "white" }}
                 renderItem={({ item }) => (
-                    <View style={{borderWidth: 10, borderColor: "rgb(247, 225, 156)" }}>
+                    <View style={{ borderWidth: 10, borderColor: "rgb(247, 225, 156)" }}>
                         <Image
-                            style={{width: 300, height: 200}}
-                            source={{uri: `${item.restaurant.image}`}}
+                            style={{ width: 300, height: 200 }}
+                            source={{ uri: `${item.restaurant.image}` }}
                         />
                         <Image
-                            style={{width: 300, height: 200}}
-                            source={{uri: `${item.image}`}}
+                            style={{ width: 300, height: 200 }}
+                            source={{ uri: `${item.image}` }}
                         />
-                        <Text style={styles.cardText}>Restaurant:{item.restaurant.name}</Text>
-                        <Text style={styles.cardText}>Item: {item.name}</Text>
-                        <Text style={styles.cardText}>Description: {item.description}</Text>
-                        <Text style={styles.cardText}>Price: {item.price}</Text>
-                        <Text style={styles.cardText}>Adress: {item.restaurant.address}</Text>
-                        <Text style={styles.cardText}>Phone Number: {item.restaurant.phone}</Text>
+                        <Text style={styles.cardText}>
+                            <Text style={{ fontWeight: 'bold', color: "gray" }}>Restaurant:</Text> {item.restaurant.name}
+                        </Text>
+                        <Text style={styles.cardText}>
+                            <Text style={{ fontWeight: 'bold', color: "gray" }}>Item:</Text> {item.name}</Text>
+                        <Text style={styles.cardText}>
+                            <Text style={{ fontWeight: 'bold', color: "gray" }}>Description:</Text> {item.description}</Text>
+                            <Text style={styles.cardText}>
+                            <Text style={{ fontWeight: 'bold', color: "gray" }}>Price:</Text>  {item.price}</Text>
+                            <Text style={styles.cardText}>
+                            <Text style={{ fontWeight: 'bold', color: "gray" }}>Address:</Text> {item.restaurant.address}</Text>
+                            <Text style={styles.cardText}>
+                            <Text style={{ fontWeight: 'bold', color: "gray" }}>Phone Number:</Text>  {item.restaurant.phone}</Text>
                     </View>
                 )}>
 
@@ -67,7 +74,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: "rgb(247, 225, 156)",
         textAlign: "center",
-        flexWrap: "wrap", 
+        flexWrap: "wrap",
         marginTop: 0,
         paddingTop: 30
     },
@@ -81,7 +88,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         color: 'black',
         backgroundColor: "rgb(247, 225, 156)",
-        height: 200 
+        height: 200
     },
 
     text: {
@@ -101,7 +108,7 @@ const styles = StyleSheet.create({
     },
     cardText: {
         textAlign: "center",
-        color: "green",
+        color: "teal",
         flexWrap: "wrap",
         paddingLeft: 0,
         marginRight: 30

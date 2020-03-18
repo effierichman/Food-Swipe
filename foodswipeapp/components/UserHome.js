@@ -31,7 +31,7 @@ export default function UserHome({ route, navigation }) {
 
     const foodPopper = async () => {
 
-        if (allFood.length > 0) {
+        if (allFood.length > 0) {  
            await setTempFood(allFood.pop())
         } else {
             setAllFood(await getFoods())
