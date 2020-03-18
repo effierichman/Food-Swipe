@@ -7,8 +7,7 @@ import { Header } from 'react-native/Libraries/NewAppScreen';
 function UserMenu({ navigation, route }) {
     let { user } = route.params
     let { id } = user
-    // const [userName, setUserName] = useState('')
-    // const [password, setPassword] = useState('')
+    
     const navigateToUserLikes = () => {
         navigation.navigate('UserLikes', { id: id})
     }

@@ -31,9 +31,8 @@ export default function UserHome({ route, navigation }) {
 
     const foodPopper = async () => {
 
-        if (allFood.length > 0) {
-            setTempFood(allFood.pop())
-            console.log(tempFood)
+        if (allFood.length > 0) {  
+           await setTempFood(allFood.pop())
         } else {
             setAllFood(await getFoods())
             await setTempFood(allFood.pop())
@@ -50,19 +49,23 @@ export default function UserHome({ route, navigation }) {
         )
     }
 
-    const handleLike = () => {
-        createLike(tempFood.id)
-        foodPopper()
+    const handleLike = async () => {
+          await  foodPopper()
+            createLike(tempFood.id)
     }
     const handleDislike = () => {
         foodPopper()
     }
+
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Food-Swipe</Text>
                 <MaterialCommunityIcons name="account" size={32} color="green" onPress={() => navigateToUserMenu()} />
-                <Text style={styles.text}>{username}</Text>
+                <View>
+                    <Text style={{textAlign: "center", color: "teal", fontSize: 25, paddingTop: 30, paddingLeft: 80,fontWeight: "bold"}}>{username}</Text> 
+                </View> 
 
 
             </View>
@@ -77,8 +80,8 @@ export default function UserHome({ route, navigation }) {
             </View>
             <View style={styles.symbol}>
 
-                <Feather onPress={handleDislike} name="thumbs-down" size={32} color="green" />
-                <Feather onPress={handleLike} name="thumbs-up" size={32} color="green" />
+                <Feather onPress={handleDislike} name="thumbs-down" size={40} color="green" />
+                <Feather onPress={handleLike} name="thumbs-up" size={40} color="green" />
             </View>
         </View>
     );
@@ -90,7 +93,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "flex-end",
-        backgroundColor: "rgb(247, 225, 156)"
+        backgroundColor: "rgb(247, 225, 156)",
+        textAlign: "center"
     },
 
     header: {
@@ -106,7 +110,7 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        color: "blue",
+        color: "green",
         width: 300,
         fontSize: 50,
         fontWeight: "bold"
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
     card: {
         flex: .5,
         height: 800,
-        width: 200,
+        width: 400,
         backgroundColor: 'red'
     }
 })

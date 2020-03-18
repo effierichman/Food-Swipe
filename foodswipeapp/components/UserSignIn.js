@@ -48,10 +48,6 @@ function UserSignIn({ navigation }) {
             console.log('failed to sign in')
     }, [currentUser])
 
-    // const navigateToUserHome = () => {
-    //     navigation.navigate("UserHome")
-    // }
-
     const foodGrabber = async () => {
         const resp = await getFoods()
         setFoods(resp)
@@ -92,7 +88,7 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        color: "red",
+        color: "green",
         fontSize: 30,
         fontWeight: "bold",
         marginBottom: 100,

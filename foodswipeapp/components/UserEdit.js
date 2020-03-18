@@ -63,7 +63,7 @@ function UserEdit({ navigation, route }) {
                 <MaterialCommunityIcons name="account" size={32} color="green" />
             </View>
             <View>
-                <Text style={styles.text}>User Edit Page</Text>
+                <Text style={styles.text}>User Settings</Text>
                 <TextInput
                     style={styles.input}
                     onChangeText={handleUsernameChange}
@@ -83,10 +83,12 @@ function UserEdit({ navigation, route }) {
                     secureTextEntry={true}
                     placeholder='Password'
                 />
+                <View style={styles.buttonContainer}>
 
-                <Button text='Save' color='white' helper={handleSubmit} />
-                <Button text='Delete Account' color='white' helper={handleDelete} />
-                {/* add navigation to landing page when delete account is pressed */}
+                <Button style={styles.buttons} text='Save' color='green' helper={handleSubmit} />
+                <Button style={styles.buttons} text='Delete Account' color='white' helper={handleDelete} />
+                </View>
+                
             </View>
         </View>
     );
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "blue"
+        backgroundColor: "rgb(247, 225, 156)"
     },
 
     header: {
@@ -113,11 +115,12 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        color: "red",
+        color: "green",
         width: 300,
         fontSize: 30,
         fontWeight: "bold",
-        fontSize: 50
+        fontSize: 50,
+        textAlign: "center"
     },
     input: {
         height: 40,
@@ -126,6 +129,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         textAlign: 'center',
         margin: 10
+    },
+    buttons: {
+        paddingLeft: 70
+    },
+    buttonContainer: {
+        marginRight: 10
     }
 })
 
